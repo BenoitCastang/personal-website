@@ -1,7 +1,0 @@
-div:hover {
-  color: red;
-}
-div:hover p {
-  background-color: yellow;
-  font-size: 100px;
-}
