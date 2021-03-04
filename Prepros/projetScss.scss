@@ -1,0 +1,11 @@
+$primaire: yellow;
+
+@import 'variables.scss';
+
+div:hover {
+    color: red;
+    p {
+        background-color: $primaire;
+        font-size: 100px;
+    }
+}
