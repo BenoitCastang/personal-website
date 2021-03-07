@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: cornsilk;
 }
 legend {
     border: solid 2px black;
