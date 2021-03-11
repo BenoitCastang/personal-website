@@ -7,16 +7,35 @@
     <link rel="stylesheet" href="/css/portfolio_pages.css">
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
 </head>
+
 <body>
-    <div id="form">
-        <p id='player-one'>Comment t'appelles-tu ?</p>
-    </div>
-    <div class="nav">
-        <a href="/portfolio/flexbox-training.html">Flexbox-training</a>
-        <a href="/portfolio/sun_rise.html">Sun rise</a>
-        <a href="/portfolio.html">Portfolio</a>
-        <a href="/index.html">Back to CV</a>
-    </div>
+
+    <section id="form">
+
+        <p id='visitorName' tabindex="0"><span>Quel est votre nom ?</span></p>
+
+        <form action="/portfolio/forms.html" method="POST">
+            <fieldset>
+                <legend>Aimez-vous mon site ?</legend>
+                <input type="radio" name="radio" id="radio">
+                <label for="radio">Oui</label><br>
+                <input type="radio" name="radio" id="radio">
+                <label for="radio">Oui</label><br>
+                <input type="radio" name="radio" id="radio" checked>
+                <label for="radio">Oui, je vous <a href="https://www.linkedin.com/in/benoit-castang-0019101a3/" target="_blank" title="castang.benoit@gmail.com">embauche</a> !</label><br>
+            </fieldset>
+        </form>
+
+    </section>
+
+    <nav>
+        <a href="/portfolio/flexbox-training.html" title="Flexbox training">Flexbox-training</a>
+        <a href="/portfolio/sun_rise.html" title="Sun rise">Sun rise</a>
+        <a href="/portfolio.html" title="Porfolio">Portfolio</a>
+        <a href="/index.html" title="Back to CV">Back to CV</a>
+    </nav>
+
     <script src="/js/forms.js"></script>
+
 </body>
 </html>

@@ -10118,3 +10118,7 @@ section.resume-section .resume-section-content {
 .capitalize {
   text-transform: capitalize;
 }
+dl {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
