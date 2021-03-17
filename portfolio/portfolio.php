@@ -13,7 +13,7 @@
     
     <article>
 
-        <p>Mon portfolio est actuellement en construction. Revenez ici régulièrement pour le voir évoluer :)</p>
+        <p>Mon portfolio, au jour du <?php echo date('d/m/Y'); ?>, est actuellement en construction. Revenez ici régulièrement pour le voir évoluer :)</p>
         <p>A défaut de nombreuses <a href="/index.html#experience" title="Expériences">expériences</a> à faire valoir en tant que débutant, je vous propose, en lieu et place de rutilantes informations sur ma <a href="/index.html#formation" title="Formation">formation</a> ou mes <a href="/index.html#skills" title="Compétences">compétences</a>, de trouver ici compilées toutes les activités auxquelles je me livrerai durant mon apprentissage, de sorte que vous puissiez obtenir de moi non des promesses mais un aperçu concret de ce que je sais faire réellement.</p>
 
     </article>
@@ -24,7 +24,6 @@
         <a href="/portfolio/forms.html" title="Form">Forms</a>
         <a href="/portfolio/sun_rise.html" title="Sun rise">Sun rise</a>
         <a href="/index.html" title="Back to CV">Back to CV</a>
-        <a href="/php/backend.php" title="Go to backend.php">Go to backend</a>
 
     </nav>
 
