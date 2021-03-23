@@ -13,9 +13,9 @@
 
 <?php
 $firstVar = 'damn';
-echo 'Value ' . $firstVar . ' is my first var value.';
+echo 'Value "' . $firstVar . '" is my first var value.';
 ?>
-
+ 
 <nav>
 
     <a href="/portfolio/sun_rise.html" title="Sun rise">Sun rise</a>
