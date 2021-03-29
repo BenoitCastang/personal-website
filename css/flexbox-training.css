@@ -1,6 +1,6 @@
 body {
     display: flex;
-    height: 700px;
+    height: 600px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -9,7 +9,7 @@ legend {
     border: solid 2px black;
     background-color: rgb(187, 187, 184);
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     font-family: serif;
     padding: 10px;
     padding-left: 15px;
@@ -21,13 +21,13 @@ fieldset {
     justify-content: center;
     align-items: center;
     border: solid 2px black;
-    height: 600px;
+    height: 500px;
     background-color: rgba(194, 194, 191, 0.5);
     padding-left: 50px;
     padding-right: 50px;
 }
 .section1 {
-    height: 500px;
+    height: 400px;
     width: 250px;
     display: flex;
     flex-flow: row wrap;
@@ -38,7 +38,7 @@ fieldset {
     margin-right: 25px;
 }
 .section2 {
-    height: 500px;
+    height: 400px;
     width: 250px;
     display: flex;
     justify-content: space-around;
@@ -64,7 +64,7 @@ p {
 }
 .box {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     writing-mode: vertical-rl;
     text-orientation: upright;
