@@ -24,11 +24,14 @@ input {
     text-transform: uppercase;
     border: 2px solid rgba(0, 0, 200, 0.4);
     background: rgba(0, 0, 200, 0.3);
-    color: rgba(0, 0, 200, 0.4);
+    color: rgba(0, 0, 200, 0.5);
     box-shadow: 10px 10px 20px rgba(0, 0, 200, 0.4);
     border-radius: 10px;
     padding: 3px 10px;
     cursor: pointer;
+}
+#visitorName:hover {
+    background: rgba(0, 0, 200, 0.4);
 }
 nav {
     margin-top: 100px;

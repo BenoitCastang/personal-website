@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php include('./includes/session_start.php');?>
+<?php include('./includes/head.php');?>
+<?php include('./includes/count.php');?>
+<?php include('./includes/welcome.php');?>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Porfolio</title>
     <link rel="stylesheet" href="/css/portfolio.css">
-    <link rel="stylesheet" href="/css/portfolio_pages.css">
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+    <title>Porfolio</title>
 </head>
 
 <body>
@@ -18,15 +17,7 @@
 
     </article>
 
-    <nav>
-
-        <a href="/portfolio/flexbox-training.html" title="Flexbox training">Flexbox-training</a>
-        <a href="/portfolio/forms.html" title="Form">Forms</a>
-        <a href="/portfolio/sun_rise.html" title="Sun rise">Sun rise</a>
-        <a href="/portfolio/breakout_game.html" title="Breakout Game">Breakout Game</a>
-        <a href="/index.html" title="Back to CV">Back to CV</a>
-
-    </nav>
+    <?php include('./includes/menu.php') ?>
 
 </body>
 

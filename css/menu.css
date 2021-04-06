@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav a {
+    color: white;
+    margin: 10px;
+    padding: 7px;
+    border-radius: 10px;
+    background: linear-gradient(royalblue,skyblue);
+}
+nav a:hover {
+    color: rgb(241, 234, 234);
+}
+nav a[title="User"] {
+    background: linear-gradient(red, orange);            
+}
+.log {
+    background: linear-gradient(green, rgb(224, 224, 42));
+}

@@ -13,18 +13,13 @@ a:active {
 a:hover {
     color: red;
 }
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.count {
+    position: fixed;
+    left: 5px;
+    top: 5px;
 }
-nav a {
-    color: white;
-    margin: 10px;
-    padding: 7px;
-    border-radius: 10px;
-    background: linear-gradient(royalblue,skyblue);
-}
-nav a:hover {
-    color: orange;
+.welcome {
+    position: fixed;
+    left: 5px;
+    top: 25px;
 }

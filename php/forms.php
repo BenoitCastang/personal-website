@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php include('./includes/session_start.php');?>
+<?php include('./includes/head.php');?>
+<?php include('./includes/count.php');?>
+<?php include('./includes/welcome.php');?>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Porfolio</title>
     <link rel="stylesheet" href="/css/forms.css">
-    <link rel="stylesheet" href="/css/portfolio_pages.css">
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" />
+    <title>Forms</title>
 </head>
 
 <body>
 
     <section id="form">
 
-        <p id='visitorName' tabindex="0"><span>Quel est votre nom ?</span></p>
+        <p id='visitorName' tabindex="0"><span>Cliquez ici</span></p>
 
         <form action="/portfolio/forms.html" method="POST">
 
@@ -31,15 +30,7 @@
 
     </section>
 
-    <nav
-    >
-        <a href="/portfolio/flexbox-training.html" title="Flexbox training">Flexbox-training</a>
-        <a href="/portfolio/sun_rise.html" title="Sun rise">Sun rise</a>
-        <a href="/portfolio/breakout_game.html" title="Breakout Game">Breakout Game</a>
-        <a href="/portfolio/portfolio.php" title="Porfolio">Portfolio</a>
-        <a href="/index.html" title="Back to CV">Back to CV</a>
-
-    </nav>
+    <?php include('./includes/menu.php') ?>
 
     <script src="/js/forms.js"></script>
 
