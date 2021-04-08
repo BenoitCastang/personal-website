@@ -23,17 +23,12 @@
         $response = $database->query('SELECT * FROM jeux_video');
         for ($i=0; $i < 50; $i++) { 
             $data = $response->fetch();
-            ?>
-            <div class="data">
-                <div><strong><?= array_search($data[0], $data) . ' = ' . $data[0] ?></strong></div>
-                <div><?= array_search($data[1], $data) . ' = ' . $data[1] ?></div>
-                <div><?= array_search($data[2], $data) . ' = ' . $data[2] ?></div>
-                <div><?= array_search($data[3], $data) . ' = ' . $data[3] ?></div>
-                <div><?= array_search($data[4], $data) . ' = ' . $data[4] ?></div>
-                <div><?= array_search($data[5], $data) . ' = ' . $data[5] ?></div>
-                <div><?= array_search($data[6], $data) . ' = ' . $data[6] ?></div>
-            </div>
-            <?php
+            for ($key=0; $key < count($data); $key++) { 
+                ?>
+                <div><?= array_search($data[$key], $data) . ' = ' . $data[$key]?></div>
+                <?php
+                echo is_int($key);
+            }
         }
     ?>
     
