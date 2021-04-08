@@ -20,21 +20,23 @@
         catch (Exception $e) {
             die('Error : ' . $e->getMessage());
         }
-        $response = $database->query('SELECT * FROM jeux_video');
-        for ($i=0; $i < 50; $i++) { 
+        $response = $database->query('SELECT * FROM news');
+        for ($column=0; $column < 3; $column++) {
             $data = $response->fetch();
             ?>
             <div class="data">
                 <div><strong><?= array_search($data[0], $data) . ' = ' . $data[0] ?></strong></div>
-                <div><?= array_search($data[1], $data) . ' = ' . $data[1] ?></div>
-                <div><?= array_search($data[2], $data) . ' = ' . $data[2] ?></div>
-                <div><?= array_search($data[3], $data) . ' = ' . $data[3] ?></div>
-                <div><?= array_search($data[4], $data) . ' = ' . $data[4] ?></div>
-                <div><?= array_search($data[5], $data) . ' = ' . $data[5] ?></div>
-                <div><?= array_search($data[6], $data) . ' = ' . $data[6] ?></div>
+                <?php
+                for ($key=1; $key < 3; $key++) {
+                    ?>
+                    <div><?= array_search($data[$key], $data) . ' = ' . $data[$key] ?></div>
+                    <?php
+                }
+                ?>
             </div>
             <?php
         }
+
     ?>
     
     
