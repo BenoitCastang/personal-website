@@ -26,6 +26,8 @@
         }
     ?>
 
+    <?php echo $_POST['pseudo'] ?>
+
 <footer>
     <?php include('./includes/menu.php');?>
 </footer>

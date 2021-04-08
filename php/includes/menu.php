@@ -11,6 +11,7 @@
         <a href="/php/forms.php" title="Form">Forms</a>
         <a href ="/php/sun_rise.php" title="Sun rise">Sun rise</a>
         <a href="/php/breakout_game.php" title="Breakout Game">Breakout game</a>
+        <a href="/php/sql.php" title="SQL">SQL</a>
         <a href="/index.html" title="Back to CV">Back to CV</a>
         <?php
     }
@@ -22,6 +23,7 @@
         <a href="/php/forms.php" title="Form">Forms</a>
         <a href ="/php/sun_rise.php" title="Sun rise">Sun rise</a>
         <a href="/php/breakout_game.php" title="Breakout Game">Breakout game</a>
+        <a href="/php/sql.php" title="SQL">SQL</a>
         <a href="/index.html" title="Back to CV">Back to CV</a>
         <?php
     } 

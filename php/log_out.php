@@ -9,7 +9,10 @@
 <body>
 
     You have been logged out.
-    <?php $_SESSION['connected'] = false; ?>
+    <?php 
+        $_SESSION['connected'] = false;
+        $_SESSION['pseudo'] = null;
+    ?>
 
 <footer>
     <?php include('./includes/menu.php');?>
