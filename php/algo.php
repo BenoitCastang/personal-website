@@ -129,8 +129,8 @@ ALGO
         $contact['gender'] = 'female';
         // echo $contact['firstname'];
         
-        // foreach($contact as $key => $element) {
-        //     echo $key . ' = ' . $element . '<br>';
+        // foreach($contact as $key => $value) {
+        //     echo $key . ' = ' . $value . '<br>';
         // }
 
         // echo "<pre>";

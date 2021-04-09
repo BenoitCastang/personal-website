@@ -11,7 +11,6 @@
 <body>
 
     <?php 
-
         // try running PHP Data Object
         try {
             // lauch instance of PDO object
@@ -20,23 +19,22 @@
         catch (Exception $e) {
             die('Error : ' . $e->getMessage());
         }
-        $response = $database->query('SELECT * FROM news');
-        for ($column=0; $column < 3; $column++) {
-            $data = $response->fetch();
+        $response = $database->query('SELECT nom FROM jeux_video');
+        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <div class="data">
-                <div><strong><?= array_search($data[0], $data) . ' = ' . $data[0] ?></strong></div>
                 <?php
-                for ($key=1; $key < 3; $key++) {
+                foreach ($data as $key => $value) {
                     ?>
-                    <div><?= array_search($data[$key], $data) . ' = ' . $data[$key] ?></div>
+                    <div><?= $key . ' = ' . $value ?></div>
                     <?php
                 }
                 ?>
             </div>
             <?php
         }
-
+        $response->closeCursor();        
+    
     ?>
     
     
