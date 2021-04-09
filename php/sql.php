@@ -4,43 +4,28 @@
 <?php include('./includes/welcome.php');?>
 
 <head>
-    <link rel="stylesheet" href="/css/sql.css">
+    <link rel="stylesheet" href="/css/log_in.css">
     <title>SQL</title>
 </head>
 
 <body>
 
-    <?php 
-        // try running PHP Data Object
-        try {
-            // lauch instance of PDO object
-            $database = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
-        }
-        catch (Exception $e) {
-            die('Error : ' . $e->getMessage());
-        }
-        $response = $database->query('SELECT nom FROM jeux_video');
-        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-            <div class="data">
-                <?php
-                foreach ($data as $key => $value) {
-                    ?>
-                    <div><?= $key . ' = ' . $value ?></div>
-                    <?php
-                }
-                ?>
-            </div>
-            <?php
-        }
-        $response->closeCursor();        
+<section class="form">
     
-    ?>
-    
-    
-    <footer>
-        <?php include('./includes/menu.php');?>
-    </footer>
+    <form action="/php/sql_request.php" method="post">
+        <div>
+            <input type="text" name="possesseur" placeholder="Possesseur">
+            <input type="submit" value="Send">
+        </div>
+        <div>
+            <input type="number" name="prix_max" placeholder="Prix max">
+            <input type="submit" value="Send">
+        </div>
+    </form>
+
+</section>
+
+<?php include('./includes/menu.php') ?>
 
 </body>
 
