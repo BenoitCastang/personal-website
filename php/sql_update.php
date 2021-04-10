@@ -4,25 +4,30 @@
 <?php include('./includes/welcome.php');?>
 
 <head>
-    <link rel="stylesheet" href="/css/sql_request.css">
-    <title>SQL Request</title>
+    <link rel="stylesheet" href="/css/sql_select.css">
+    <title>SQL Update</title>
 </head>
 
 <body>
 
     <?php 
-        // try running PHP Data Object
+    
         try {
-            // lauch instance of PDO object, displaying errors
             $database = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         catch (Exception $e) {
             die('Error : ' . $e->getMessage());
         }
         
-        $request = $database->prepare('SELECT nom, prix, possesseur FROM jeux_video WHERE possesseur = :possesseur AND prix <= :prixmax ORDER BY prix');
-        $request->execute(array('possesseur' => $_POST['possesseur'], 'prixmax' => $_POST['prix_max']));
-        while ($data = $request->fetch(PDO::FETCH_ASSOC)) {
+        $response = $database->prepare('UPDATE jeux_video SET nbre_joueurs_max = :newValue WHERE nom = :searchByName');
+        $response->execute(array(
+            'searchByName' => $_POST['searchByName'],
+            'newValue' => $_POST['newValue'],
+        ));
+        $response->closeCursor();
+
+        $response = $database->query('SELECT * FROM jeux_video LIMIT 50, 20');
+        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
             ?>
             <div class="data">
                 <?php
@@ -35,11 +40,10 @@
             </div>
             <?php
         }
-        $request->closeCursor();
+        $response->closeCursor();
     
     ?>
-    
-    
+
     <footer>
         <?php include('./includes/menu.php');?>
     </footer>
