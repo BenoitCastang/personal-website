@@ -1,14 +1,24 @@
+/* footer {
+    background-color: #000d;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 200px;
+} */
 nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 nav a {
+    margin-top: 50px;
     color: white;
     margin: 10px;
     padding: 7px;
     border-radius: 10px;
     background: linear-gradient(royalblue,skyblue);
+    text-align: center;
+    white-space: nowrap;
 }
 nav a:hover {
     color: rgb(241, 234, 234);
@@ -19,3 +29,6 @@ nav a[title="User"] {
 .log {
     background: linear-gradient(green, rgb(224, 224, 42));
 }
+/* nav a:nth-child(2) {
+    flex-shrink: 20;
+} */

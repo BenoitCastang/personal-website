@@ -1,5 +1,5 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/log.css">
@@ -9,12 +9,12 @@
 <body>
 
     <?php 
-        if ($_POST['password'] == 'donaldville') {
+        if ($_POST['password'] === 'donaldville') {
             ?>
             <style>body {color: blue}</style>
             Password is correct !
             <?php
-            $_SESSION['pseudo'] = $_POST['pseudo'];
+            $_SESSION['pseudo'] = htmlspecialchars($_POST['pseudo']);
             $_SESSION['connected'] = true;
         } 
         else {
@@ -25,12 +25,10 @@
             $_SESSION['connected'] = false;
         }
     ?>
+    
 
-    <?php echo $_POST['pseudo'] ?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
 
-<footer>
-    <?php include('./includes/menu.php');?>
-</footer>
 
 </body>
 

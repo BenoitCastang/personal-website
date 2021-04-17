@@ -1,7 +1,7 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
-<?php include('./includes/count.php');?>
-<?php include('./includes/welcome.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/sql_select.css">
@@ -12,45 +12,48 @@
 
     <?php 
     
-        try {
-            $database = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-        }
-        catch (Exception $e) {
-            die('Error : ' . $e->getMessage());
-        }
+        include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
 
-        $response = $database->prepare('INSERT INTO jeux_video (nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES (:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
-        $response->execute(array(
-            'nom' => $_POST['nom'],
-            'possesseur' => $_POST['possesseur'],
-            'console' => $_POST['console'],
-            'prix' => $_POST['prix'],
-            'nbre_joueurs_max' => $_POST['nbre_joueurs_max'],
-            'commentaires' => $_POST['commentaires']
-        ));
-        $response->closeCursor();
-        
-        $response = $database->query('SELECT * FROM jeux_video LIMIT 49, 20');
-        while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
-            ?>
-            <div class="data">
-                <?php
-                foreach ($data as $key => $value) {
-                    ?>
-                    <div><?= $key . ' = ' . $value ?></div>
-                    <?php
-                }
+        if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['possesseur']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null && htmlspecialchars($_POST['nbre_joueurs_max']) != null && htmlspecialchars($_POST['commentaires']) != null) {
+
+            $response = $database->prepare('INSERT INTO jeux_video (nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES (:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
+            $response->execute(array(
+                'nom' => htmlspecialchars($_POST['nom']),
+                'possesseur' => htmlspecialchars($_POST['possesseur']),
+                'console' => htmlspecialchars($_POST['console']),
+                'prix' => htmlspecialchars($_POST['prix']),
+                'nbre_joueurs_max' => htmlspecialchars($_POST['nbre_joueurs_max']),
+                'commentaires' => htmlspecialchars($_POST['commentaires'])
+            ));
+            echo $_POST['nom'] . ' has been added' ;
+            $response->closeCursor();
+            
+            $response = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
+            $response->execute(array(
+                'nom' => htmlspecialchars($_POST['nom'])
+            ));
+            while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
                 ?>
-            </div>
-            <?php
+                <div class="data">
+                    <?php
+                    foreach ($data as $key => $value) {
+                        ?>
+                        <div><?= $key . ' = ' . $value ?></div>
+                        <?php
+                    }
+                    ?>
+                </div>
+                <?php
+            }
+            $response->closeCursor();
+
         }
-        $response->closeCursor();
     
     ?>
 
-    <footer>
-        <?php include('./includes/menu.php');?>
-    </footer>
+    
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
+    
 
 </body>
 

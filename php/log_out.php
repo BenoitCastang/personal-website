@@ -1,5 +1,5 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/log.css">
@@ -14,9 +14,9 @@
         $_SESSION['pseudo'] = null;
     ?>
 
-<footer>
-    <?php include('./includes/menu.php');?>
-</footer>
+
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
+
 
 </body>
 

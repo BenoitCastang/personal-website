@@ -1,7 +1,7 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
-<?php include('./includes/count.php');?>
-<?php include('./includes/welcome.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/sun_rise.css">
@@ -21,7 +21,7 @@
 
     </div>
     
-    <?php include('./includes/menu.php') ?>
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php') ?>
 
 </body>
 

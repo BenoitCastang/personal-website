@@ -17,7 +17,7 @@ ALGO
 ---- -->
 
 <!-- <?= "Le loup a faim."?> -->
-<!-- 
+
 <section class="condition_tests">
 
     <?php
@@ -187,7 +187,7 @@ ALGO
 
     ?>
 
-</section> -->
+</section>
 
 <?php 
 
@@ -305,7 +305,7 @@ FORMS
             <input type="submit" value="Send">
         </div> -->
 
-<?php include('./includes/menu.php') ?>
+<?php include('/php/includes/menu.php') ?>
 
 </body>
 

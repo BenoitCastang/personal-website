@@ -5,21 +5,21 @@
 
 <head>
     <link rel="stylesheet" href="/css/sql_select.css">
-    <title>SQL Select</title>
+    <title>SQL Delete</title>
 </head>
 
 <body>
 
-    <?php 
-
+    <?php
+    
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
         if (htmlspecialchars($_POST['nom']) != null) {
-            $request = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
-            $request->execute(array(
+            $response = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
+            $response->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
             ));
-            while ($data = $request->fetch(PDO::FETCH_ASSOC)) {
+            while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
                 ?>
                 <div class="data">
                     <?php
@@ -32,11 +32,22 @@
                 </div>
                 <?php
             }
-            $request->closeCursor();
+            $response->closeCursor();
+
+            $response = $database->prepare('DELETE FROM jeux_video WHERE nom = :nom');
+            $response->execute(array(
+                'nom' => htmlspecialchars($_POST['nom']),
+            ));
+            echo $_POST['nom'] . ' has been deleted';
+            $response->closeCursor();
         }
-    
+
+        else {
+            echo 'invalid request';
+        }
+            
     ?>
-    
+
     
     <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
     

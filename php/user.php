@@ -1,7 +1,7 @@
-<?php include('./includes/session_start.php');?>
-<?php include('./includes/head.php');?>
-<?php include('./includes/count.php');?>
-<?php include('./includes/welcome.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
     <title>User</title>
@@ -14,9 +14,9 @@
 
     <p><?= 'This is ' . $_SESSION['pseudo'] . '\'s profile page.' ?></p>
 
-    <footer>
-        <?php include('./includes/menu.php');?>
-    </footer>
+    
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
+    
 
 </body>
 

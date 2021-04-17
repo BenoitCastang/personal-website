@@ -1,6 +1,6 @@
 <?php 
     // file open, reading + writing
-    $count_file = fopen('./files/count.txt', 'r+');
+    $count_file = fopen($_SERVER['DOCUMENT_ROOT'].'/php/files/count.txt', 'r+');
     // read first line
     $count = fgets($count_file);
     ?>

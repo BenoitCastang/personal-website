@@ -9,8 +9,8 @@ let context = canvas.getContext("2d");
 // ball vars
 let x = canvas.width/2;
 let y = canvas.height-30 ;
-let dx = 2;
-let dy = 2;
+let dx = 6;
+let dy = 6;
 let ballRadius = 10;
 // paddle vars
 let paddleHeight = 12;
@@ -37,6 +37,10 @@ for (let columns = 0 ; columns < brickColumnCount ; columns++) {
 }
 // score
 let score = 0;
+// lives
+let lives = 3;
+// color
+color = '#0095DD';
 
 // ---------
 //  Commands
@@ -76,7 +80,7 @@ function mouseMoveHandler(event) {
 function drawBall() {
     context.beginPath();
     context.arc(x, y, ballRadius, 0, Math.PI*2);
-    context.fillStyle='#0095DD';
+    context.fillStyle=color;
     context.fill();
     context.closePath();
 }
@@ -84,7 +88,7 @@ function drawBall() {
 function drawPaddle() {
     context.beginPath();
     context.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    context.fillStyle = '#0095DD';
+    context.fillStyle = color;
     context.fill();
     context.closePath();
 }
@@ -99,12 +103,36 @@ function drawBricks() {
                 brickField[columns][rows].y = brickY;
                 context.beginPath();
                 context.rect(brickX, brickY, brickWidth, brickHeight);
-                context.fillStyle='#0095DD';
+                context.fillStyle=color;
                 context.fill();
                 context.closePath();
             }
         }
     }
+}
+
+function drawScore() {
+    context.font='16px Arial';
+    context.fillStyle=color;
+    context.fillText("Score : "+score, 8, 20);
+}
+
+function drawLives() {
+    context.font='16px Arial';
+    context.fillStyle=color;
+    context.fillText("Lives : "+lives, canvas.width-67, 20);
+}
+
+function twoLivesLeft() {
+    context.font='32px Arial';
+    context.fillStyle='#F00';
+    context.fillText("2 LIVES LEFT", canvas.width-canvas.width/2, canvas.height-canvas.height/2);
+}
+
+function oneLifeLeft() {
+    context.font='32px Arial';
+    context.fillStyle='#F00';
+    context.fillText("1 LIFE LEFT", canvas.width-canvas.width/2, canvas.height-canvas.height/2);
 }
 
 // ---------------
@@ -123,18 +151,11 @@ function collisionDetection() {
                     if (score == brickColumnCount*brickRowCount) {
                         alert("YOU WIN, CONGRATULATIONS !");
                         document.location.reload();
-                        clearInterval(interval);
                     }
                 }
             }
         }
     }
-}
-
-function drawScore() {
-    context.font='16px Arial';
-    context.fillStyle='#0095DD';
-    context.fillText("Score : "+score, 8, 20);
 }
 
 // -------------
@@ -148,6 +169,7 @@ function draw() {
     drawBall();
     drawPaddle();
     drawScore();
+    drawLives();
     collisionDetection();
     x += dx;
     y -= dy;
@@ -158,28 +180,49 @@ function draw() {
         dy = -dy;
     } 
     if (y > canvas.height-(ballRadius+paddleHeight)) {
-        if (x > (paddleX-ballRadius*1.5) && x < paddleX + paddleWidth + ballRadius*1.5) {
+        if (x > (paddleX-ballRadius*1.5) && x < (paddleX+paddleWidth+ballRadius*1.5)) {
             dy = -dy;
         }
         else {
-            alert("GAME OVER");
-            document.location.reload();
-            clearInterval(interval);
+            lives--;
+            if (!lives) {
+                alert("GAME OVER");
+                document.location.reload();
+            }
+            if (lives == 2) {
+                x = canvas.width/2; 
+                y = canvas.height-30;
+                dx = 6;
+                dy = 9;
+                paddleX = (canvas.width-paddleWidth)/2;
+                color = '#0c0';
+            }
+            if (lives == 1) {
+                x = canvas.width/2; 
+                y = canvas.height-30;
+                dx = 7;
+                dy = 6;
+                paddleX = (canvas.width-paddleWidth)/2;
+                color = '#c00'
+            }
         }
     }
     if (rightPressed) {
-        paddleX += 5;
+        paddleX += 15;
         if (paddleX + paddleWidth > canvas.width) {
             paddleX = canvas.width - paddleWidth;
         }
     }
     if (leftPressed) {
-        paddleX -= 5;
+        paddleX -= 15;
         if (paddleX < 0) {
             paddleX = 0;
         }
     }
+    // call itself over and over again syncing the framerate accordingly and rendering the shapes only when needed
+    requestAnimationFrame(draw);
 }
 
 // setInterval runs a function each x milliseconds
-let interval = setInterval(draw, 7);
+// let interval = setInterval(draw, 6);
+draw();

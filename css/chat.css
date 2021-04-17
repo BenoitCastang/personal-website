@@ -15,6 +15,8 @@ body {
     padding: 7px;
     margin-top: 10px;
     line-height: 18px;
+    display: flex;
+    flex-direction: column;
 }
 .form {
     display: flex;
@@ -28,4 +30,9 @@ input, textarea {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+}
+.message_info div {
+    display: flex;
+    width: 100px;
+    text-align: center;
 }
