@@ -13,11 +13,11 @@
     
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
-        if (htmlspecialchars($_POST['pseudo']) != null && htmlspecialchars($_POST['message']) != null) {
-            $response = $database->prepare('INSERT INTO chat (pseudo, message, date_message, time_message) VALUES (:pseudo, :message, CURDATE(), CURTIME())');
+        if (htmlspecialchars($_POST['pseudo']) != null && htmlspecialchars($_POST['content_message']) != null) {
+            $response = $database->prepare('INSERT INTO chat (pseudo, content_message, datetime_message) VALUES (:pseudo, :content_message, NOW())');
             $response->execute(array(
                 'pseudo' => htmlspecialchars($_POST['pseudo']),
-                'message' => htmlspecialchars($_POST['message']),
+                'content_message' => htmlspecialchars($_POST['content_message']),
             ));
             $response->closeCursor();
         }

@@ -15,39 +15,20 @@
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
         if (htmlspecialchars($_POST['nom']) != null) {
-            $response = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
-            $response->execute(array(
-                'nom' => htmlspecialchars($_POST['nom']),
-            ));
-            while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
-                ?>
-                <div class="data">
-                    <?php
-                    foreach ($data as $key => $value) {
-                        ?>
-                        <div><?= $key . ' = ' . $value ?></div>
-                        <?php
-                    }
-                    ?>
-                </div>
-                <?php
-            }
-            $response->closeCursor();
-
             $response = $database->prepare('DELETE FROM jeux_video WHERE nom = :nom');
             $response->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
             ));
-            echo $_POST['nom'] . ' has been deleted';
             $response->closeCursor();
         }
 
         else {
             echo 'invalid request';
         }
+
+        include($_SERVER['DOCUMENT_ROOT'].'/php/includes/sql_table.php');
             
     ?>
-
     
     <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
     

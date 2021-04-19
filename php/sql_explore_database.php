@@ -10,31 +10,9 @@
 
 <body>
 
-    <?php
+    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/sql_table.php');?>
 
-        include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
-
-        $request = $database->query('SELECT AVG(prix), console, possesseur FROM jeux_video WHERE possesseur = \'Patrick\' GROUP BY console HAVING AVG(prix) < 48 ORDER BY AVG(prix)');
-        while ($data = $request->fetch(PDO::FETCH_ASSOC)) { 
-            ?>
-            <div class="data">
-                <?php
-                foreach ($data as $key => $value) {
-                    ?>
-                    <div><?= $key . ' = ' . $value ?></div>
-                    <?php
-                }
-                ?>
-            </div>
-            <?php
-        }
-        $request->closeCursor();
-
-    ?>
-
-    
     <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    
 
 </body>
 

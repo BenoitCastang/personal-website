@@ -15,6 +15,7 @@
                 <a href="/php/breakout_game.php" title="Breakout Game"><span>Breakout game</span></a>
                 <a href="/php/sql.php" title="SQL"><span>SQL</span></a>
                 <a href="/php/chat.php" title="Chat"><span>Chat</span></a>
+                <a href="/php/blog.php" title="Blog"><span>Blog</span></a>
                 <a href="/index.html" title="Back to CV"><span>Back to CV</span></a>
             <?php
 
@@ -29,6 +30,7 @@
                 <a href="/php/breakout_game.php" title="Breakout Game"><span>Breakout game</span></a>
                 <a href="/php/sql.php" title="SQL"><span>SQL</span></a>
                 <a href="/php/chat.php" title="Chat"><span>Chat</span></a>
+                <a href="/php/blog.php" title="Blog"><span>Blog</span></a>
                 <a href="/index.html" title="Back to CV"><span>Back to CV</span></a>
             <?php
         } 

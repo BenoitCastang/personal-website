@@ -12,28 +12,18 @@
 
 <section class="form">
 
-    <h1>Search database</h1>
-    <form action="/php/sql_select.php" method="post">
-        <div>
-            <input type="text" name="nom" placeholder="Nom">
-            <input type="submit" value="Send">
-        </div>
-    </form>
-
-    <h1>Add database</h1>
+    <h1>Add game</h1>
     <form action="/php/sql_add.php" method="post">
         <div>
             <input type="text" name="nom" placeholder="Nom">
             <input type="text" name="possesseur" placeholder="Possesseur">
             <input type="text" name="console" placeholder="Console">
             <input type="text" name="prix" placeholder="Prix">
-            <input type="text" name="nbre_joueurs_max" placeholder="Nbre max de joueurs">
-            <input type="text" name="commentaires" placeholder="Commentaires">
             <input type="submit" value="Send">
         </div>
     </form>
 
-    <h1>Update database</h1>
+    <h1>Modify game</h1>
     <form action="/php/sql_update.php" method="post">
         <div>
             <input type="text" name="nom" placeholder="Nom">
@@ -42,7 +32,7 @@
         </div>
     </form>
 
-    <h1>Delete database</h1>
+    <h1>Delete game</h1>
     <form action="/php/sql_delete.php" method="post">
         <div>
             <input type="text" name="nom" placeholder="Nom">

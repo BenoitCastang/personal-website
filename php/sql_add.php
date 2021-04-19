@@ -14,40 +14,23 @@
     
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
 
-        if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['possesseur']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null && htmlspecialchars($_POST['nbre_joueurs_max']) != null && htmlspecialchars($_POST['commentaires']) != null) {
-
-            $response = $database->prepare('INSERT INTO jeux_video (nom, possesseur, console, prix, nbre_joueurs_max, commentaires) VALUES (:nom, :possesseur, :console, :prix, :nbre_joueurs_max, :commentaires)');
+        if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['possesseur']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null) {
+            $response = $database->prepare('INSERT INTO jeux_video (nom, possesseur, console, prix) VALUES (:nom, :possesseur, :console, :prix)');
             $response->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
                 'possesseur' => htmlspecialchars($_POST['possesseur']),
                 'console' => htmlspecialchars($_POST['console']),
                 'prix' => htmlspecialchars($_POST['prix']),
-                'nbre_joueurs_max' => htmlspecialchars($_POST['nbre_joueurs_max']),
-                'commentaires' => htmlspecialchars($_POST['commentaires'])
             ));
-            echo $_POST['nom'] . ' has been added' ;
             $response->closeCursor();
             
-            $response = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
-            $response->execute(array(
-                'nom' => htmlspecialchars($_POST['nom'])
-            ));
-            while ($data = $response->fetch(PDO::FETCH_ASSOC)) {
-                ?>
-                <div class="data">
-                    <?php
-                    foreach ($data as $key => $value) {
-                        ?>
-                        <div><?= $key . ' = ' . $value ?></div>
-                        <?php
-                    }
-                    ?>
-                </div>
-                <?php
-            }
-            $response->closeCursor();
-
         }
+        
+        else {
+            echo 'invalid request';
+        }
+        
+        include($_SERVER['DOCUMENT_ROOT'].'/php/includes/sql_table.php');
     
     ?>
 
