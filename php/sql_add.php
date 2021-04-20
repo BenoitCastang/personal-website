@@ -14,11 +14,10 @@
     
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
 
-        if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['possesseur']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null) {
-            $response = $database->prepare('INSERT INTO jeux_video (nom, possesseur, console, prix) VALUES (:nom, :possesseur, :console, :prix)');
+        if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null) {
+            $response = $database->prepare('INSERT INTO jeux_video (nom, console, prix) VALUES (:nom, :console, :prix)');
             $response->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
-                'possesseur' => htmlspecialchars($_POST['possesseur']),
                 'console' => htmlspecialchars($_POST['console']),
                 'prix' => htmlspecialchars($_POST['prix']),
             ));

@@ -22,6 +22,14 @@
             $response->closeCursor();
         }
 
+        else if(htmlspecialchars($_GET['nom']) != null) {
+            $response = $database->prepare('DELETE FROM jeux_video WHERE nom = :nom');
+            $response->execute(array(
+                'nom' => htmlspecialchars($_GET['nom']),
+            ));
+            $response->closeCursor();
+        }
+
         else {
             echo 'invalid request';
         }

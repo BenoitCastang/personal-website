@@ -17,10 +17,12 @@
     <div class="box" id="two"></div>
     <div class="box" id="four"><div id="three"></div></div> -->
 
-    <div class="flex">
+    <!-- <div class="flex">
         <div>div1</div>
         <div>div2</div>
-    </div>
+    </div> -->
+
+    <img src="/php/images_php_creation.php" alt="image php">
     
     <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
     

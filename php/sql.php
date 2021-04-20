@@ -16,7 +16,6 @@
     <form action="/php/sql_add.php" method="post">
         <div>
             <input type="text" name="nom" placeholder="Nom">
-            <input type="text" name="possesseur" placeholder="Possesseur">
             <input type="text" name="console" placeholder="Console">
             <input type="text" name="prix" placeholder="Prix">
             <input type="submit" value="Send">
