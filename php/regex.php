@@ -12,9 +12,14 @@
 
 <body>
 
+    <!-- regex phone number
+    if (preg_match('/^0[1-9]([-. ]?[0-9]{2}){4}$/', '06-04-46-36-42')) { -->
+
     <?php
-    
-        if (preg_match('/[ay(ay)?]$/', 'ayayayayayaya')) {
+        // regex email adress
+        if (preg_match('/^[a-z0-9-._]+@[a-z0-9-_]{2,}(\.){1}[a-z]{2,4}$/', 'foobar.kludge@cruft..com')) {
+
+
             echo 'true';
         }
         else {
