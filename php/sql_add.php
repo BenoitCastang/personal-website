@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
@@ -15,7 +15,7 @@
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
 
         if (htmlspecialchars($_POST['nom']) != null && htmlspecialchars($_POST['console']) != null && htmlspecialchars($_POST['prix']) != null) {
-            $response = $database->prepare('INSERT INTO jeux_video (nom, console, prix) VALUES (:nom, :console, :prix)');
+            $response = $db->prepare('INSERT INTO jeux_video (nom, console, prix) VALUES (:nom, :console, :prix)');
             $response->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
                 'console' => htmlspecialchars($_POST['console']),

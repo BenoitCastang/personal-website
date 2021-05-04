@@ -12,5 +12,5 @@ function updateName() {
     para.textContent = `Bienvenue !`;
     legend.textContent = `Aimez-vous mon site ?`;
   }
-  para.style.backgroundColor = 'rgb(0, 200, 0, 0.3)';
+  para.style.backgroundColor = 'white';
 }

@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>

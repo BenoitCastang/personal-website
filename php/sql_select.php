@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
@@ -15,7 +15,7 @@
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
         if (htmlspecialchars($_POST['nom']) != null) {
-            $request = $database->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
+            $request = $db->prepare('SELECT * FROM jeux_video WHERE nom = :nom ORDER BY ID');
             $request->execute(array(
                 'nom' => htmlspecialchars($_POST['nom']),
             ));

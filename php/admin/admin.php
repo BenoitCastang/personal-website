@@ -1,10 +1,8 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
-
 <head>
-    <title>User</title>
+    <title>Admin page</title>
     <style>p {
         text-align: center;
     }</style>
@@ -12,7 +10,7 @@
 
 <body>
 
-    <p><?= 'This is ' . $_SESSION['member_pseudo'] . '\'s profile page.' ?></p>
+    <p><?= 'This is the admin page.' ?></p>
 
     
     <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>

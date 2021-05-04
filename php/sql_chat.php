@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
@@ -14,7 +14,7 @@
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
         if (htmlspecialchars($_POST['pseudo']) != null && htmlspecialchars($_POST['content_message']) != null) {
-            $response = $database->prepare('INSERT INTO chat (pseudo, content_message, datetime_message) VALUES (:pseudo, :content_message, NOW())');
+            $response = $db->prepare('INSERT INTO chat (pseudo, content_message, datetime_message) VALUES (:pseudo, :content_message, NOW())');
             $response->execute(array(
                 'pseudo' => htmlspecialchars($_POST['pseudo']),
                 'content_message' => htmlspecialchars($_POST['content_message']),

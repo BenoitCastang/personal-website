@@ -12,9 +12,9 @@
     40% {
       background:linear-gradient(blue, 20%, skyblue);
     }
-    95% {
+    70% {
       background-color: skyblue;
-      }
+    }
     100% {
       background-color: skyblue;
     }
@@ -27,18 +27,15 @@
     flex-direction: column;
     align-items: center;
     animation-name: sky-animation;
-    animation-duration: 20s;
+    animation-duration: 15s;
     transition-timing-function: linear;
     animation-direction: normal;
     animation-fill-mode: forwards;
   }
 @keyframes sea-animation {
-    20% {
-        background: linear-gradient(seagreen, #0d0d79);
-    }
     100% {
-        background: linear-gradient(skyblue, seagreen);
-    }
+        background: royalblue;
+      }
     } 
 #sea {
     width: 100%;
@@ -46,10 +43,13 @@
     position: relative;
     top: 50%;
     background: linear-gradient(rgb(10, 5, 105), 20%, rgb(1, 2, 20));
+    animation-name: sea-animation;
+    animation-direction: 15s;
+
 }
 @keyframes sun-animation {
     100% {
-        transform: translateY(-350px);
+        transform: translateY(-370px);
     }
 }  
 #sun {

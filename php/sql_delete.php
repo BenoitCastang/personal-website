@@ -1,6 +1,6 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/count.php');?>
+
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
@@ -14,18 +14,10 @@
     
         include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
         
-        if (htmlspecialchars($_POST['nom']) != null) {
-            $response = $database->prepare('DELETE FROM jeux_video WHERE nom = :nom');
+        if(htmlspecialchars($_GET['id']) != null) {
+            $response = $db->prepare('DELETE FROM jeux_video WHERE id = :id');
             $response->execute(array(
-                'nom' => htmlspecialchars($_POST['nom']),
-            ));
-            $response->closeCursor();
-        }
-
-        else if(htmlspecialchars($_GET['nom']) != null) {
-            $response = $database->prepare('DELETE FROM jeux_video WHERE nom = :nom');
-            $response->execute(array(
-                'nom' => htmlspecialchars($_GET['nom']),
+                'id' => htmlspecialchars($_GET['id']),
             ));
             $response->closeCursor();
         }
