@@ -1,8 +1,5 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php') ?>
-
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
     <link rel="stylesheet" href="/css/portfolio.css">
@@ -18,7 +15,10 @@
 
     </article>
 
+    <footer>
+        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
+    </footer>
+
 </body>
-    
 
 </html>

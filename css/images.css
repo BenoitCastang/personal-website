@@ -64,14 +64,37 @@ body {
 .images img {
   align-self: center;
   justify-self: center;
+  width: 70%;
+  height: 80%;
 }
 
 .zoom {
   transition: transform .5s;
-  width: 150px;
-  height: 200px;
+  width: 70%;
+  height: 80%;
 }
 
 .zoom:hover {
   transform: scale(1.1);
+}
+button {
+  background-color: #0b0;
+  color: white;
+  font-size: 4em;
+  position: absolute;
+  left: 42vw;
+  top: 25vh;
+  /* border-width: 20px;
+  border-color: #0b0;
+  border-style: inset; */
+  box-shadow: 20px 20px 20px black inset;
+}
+button:active {
+  transform: scale(.98);
+}
+#sub {
+  background-color: #f00;  
+}
+.main {
+  background-color: #0f0;
 }

@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Vollkorn';
+    background-image: url(/assets/img/library.jpg);
+    background-attachment: fixed;
+    color: white;
+}
+a {
+    color: #ccc;
+}
+a.log {
+    color: #fff;
+}
+a:link {
+    text-decoration: none;
+}
+a:active {
+    color: #aaa;
+}
+a:hover {
+    color: #aaa;
+}
+.log_out {
+    position: fixed;
+    color: #fff;
+    left: 5px;
+    top: 25px;
+}
+.log_out:hover {
+    color: #ccc;
+}
+
+/* -----------------------------------------------
+Menu
+----------------------------------------------- */
+
+.welcome {
+    position: fixed;
+    color: #fff;
+    left: 5px;
+    top: 5px;
+    max-width: 20%;
+}
+.welcome:hover {
+    color: #ccc;
+}
+nav {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    min-width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end   ;
+}
+nav a {
+    color: white;
+}
+nav a:hover {
+    color: #ccc;
+}
+
+/* ---------------------------------------
+Portfolio
+--------------------------------------- */
+
+html {
+    display: flex;
+    justify-content: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}   
+article {
+    letter-spacing: 1px;
+    line-height: 25px;
+    min-width: 30%;
+    margin-top: 50px;
+}
+
+/* ------------------------------------
+Blog
+------------------------------------ */
+
+h1, h3 {
+    text-align:center;
+}
+h2 {
+    position: relative;
+    left: 32%;
+    font-size: 1em;
+    font-weight: 100;
+}
+h3 {
+    background-color: #fff;
+    color: #000;
+    font-size:0.9em;
+    margin-bottom:0px;
+}
+.news {
+    width: 30%;
+    margin: auto;
+}
+.news p {
+    margin-top:0px;
+    border: 1px solid #fff;
+    padding: 5px;
+    text-align: justify;
+    color: #fff;
+}
+a {
+    text-decoration: none;
+}
+.comments {
+    line-height: 1.2em;
+}
+
+.comment_link {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+}
+.comment_date {
+    font-size: 0.8em;
+}
+.date {
+    font-style: italic;
+}

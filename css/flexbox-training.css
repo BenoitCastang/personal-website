@@ -25,6 +25,7 @@ fieldset {
     background-color: rgba(194, 194, 191, 0.5);
     padding-left: 50px;
     padding-right: 50px;
+    min-width: 30%;
 }
 .section1 {
     height: 400px;

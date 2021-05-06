@@ -1,43 +1,33 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php $title = 'My blog'; ?>
 
-<head>
-    <link rel="stylesheet" href="/css/blog.css">
-    <title>Mon super blog</title>
-</head>
+<?php ob_start() ?>
 
-<body>
+    <h1>My blog</h1>
 
-    <h1>Mon super blog</h1>
+    <h2>Last posts :</h2>
 
-    <span class="sous_titre font-weight-100">Derniers billets du blog :</span>
+    <div class="news">
 
-        <div class="news">
-
-            <?php
-            
-                while ($data = $posts->fetch()) {
-                    ?>
-                    <h3>
-                        <?= htmlspecialchars($data['post_title']) . ' ' ?>
-                        <em><?= $data['post_date']?></em>
-                    </h3>
-                    <p>
-                        <?= htmlspecialchars($data['post_content']) . '<br>'?>
-                        <a href="/php/blog_commentaires.php?<?='id='.$data['id'] ?>" class="log comment">Commentaires</a>
-                    </p>
-                    <?php
-                }
-                $posts->closeCursor();
-            
-            ?>
+        <?php
         
-        </div>
+            while ($data = $posts->fetch()) {
+                ?>
+                <h3>
+                    <?= htmlspecialchars($data['post_title']) . ' ' ?>
+                    <em><?= $data['post_date']?></em>
+                </h3>
+                <p>
+                    <?= htmlspecialchars($data['post_content']) . '<br>'?>
+                    <a href="/php/blog_router.php?action=post&<?='post_id='.$data['post_id'] ?>" class="log comment_link">Comments</a>
+                </p>
+                <?php
+            }
+            $posts->closeCursor();
+        
+        ?>
+    
+    </div>
 
-    <footer>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer>
+<?php $content = ob_get_clean() ?>
 
-</body>
-
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/blog_template.php'); ?>

@@ -12,18 +12,18 @@
 
     <section id="form">
 
-        <p id='visitorName' tabindex="0"><span>Cliquez ici</span></p>
+        <button id='visitorName'>Click here</button>
 
         <form action="/portfolio/forms.html" method="POST">
 
             <fieldset>
-                <legend>Aimez-vous mon site ?</legend>
+                <legend>Do you like my website ?</legend>
                 <input type="radio" name="radio" id="radio">
-                <label for="radio">Oui</label><br>
+                <label for="radio">Yes</label><br>
                 <input type="radio" name="radio" id="radio">
-                <label for="radio">Oui</label><br>
+                <label for="radio">Yes</label><br>
                 <input type="radio" name="radio" id="radio" checked>
-                <label for="radio">Oui, je vous <a href="https://www.linkedin.com/in/benoit-castang-0019101a3/" target="_blank" title="castang.benoit@gmail.com">embauche</a> !</label><br>
+                <label for="radio">Yes, i want to <a href="https://www.linkedin.com/in/benoit-castang-0019101a3/" target="_blank" title="castang.benoit@gmail.com">hire you immediatly</a> !</label><br>
             </fieldset>
 
         </form>

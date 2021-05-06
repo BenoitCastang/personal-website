@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/portfolio_pages.css">
+<link rel="stylesheet" href="/css/style.css">
 
 <div class="welcome">
     <?php if ($_SESSION['connected'] == true) {
@@ -23,6 +23,6 @@
     <a href="/php/breakout_game.php" title="Breakout Game">Breakout game</a>
     <a href="/php/sql.php" title="SQL">SQL</a>
     <a href="/php/chat.php" title="Chat">Chat</a>
-    <a href="/php/blog_controller.php" title="Blog">Blog</a>
+    <a href="/php/blog_router.php?action=listPosts" title="Blog">Blog</a>
     <a href="/index.html" title="Back to CV">Back to CV</a>    
 </nav>
