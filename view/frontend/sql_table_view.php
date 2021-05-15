@@ -5,7 +5,7 @@
 
     <main class="sql">
 
-        <h2>Jeux vidéo</h2>
+        <h1>Jeux vidéo</h1>
 
         <table>
 
@@ -35,14 +35,10 @@
                 </tr>
                 <?php
             }
+            $games->closeCursor();
             ?>
 
         </table>
-
-        <?php
-        $games->closeCursor();
-
-        ?>
 
     </main>
 

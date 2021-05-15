@@ -14,13 +14,11 @@ header div {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
 }
 footer nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    text-align: right;
 }
 a {
     text-decoration: none;
@@ -37,7 +35,7 @@ a:hover {
 @media screen and (max-width: 1024px) {
     body {
         display: grid;
-        grid-template-columns: none;
+        grid-template-columns: auto;
         grid-template-rows: auto auto auto;
     }
     main {
@@ -152,6 +150,7 @@ Chat
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: justify;
 }
 .chat #pseudo {
     margin-top: 1em;
@@ -170,8 +169,17 @@ textarea {
     margin: auto;
 }
 @media screen and (max-width: 1024px) {
-    .chat section {
-        width: 70%;
+    .chat {
+        padding: 0;
+    }
+    .chat form {
+        width: 100%;
+    }
+    .chat section{
+        width: 100%;
+    }
+    .chat p {
+        width: 100%;
     }
 }
 .pseudo {
@@ -345,17 +353,21 @@ SQL table
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    min-width: 30%;
-    margin-bottom: 50px;
 }
 td, th {
     text-align: left;
-    padding: 8px;
+    padding: 0.5em;
+}
+@media screen and (max-width: 1024px) {
+    td, th {
+        font-size: .8em;
+        padding: .5%;
+    }
 }
 tr:nth-child(even) {
     background-color: #2229;
 }
 #delete_button {
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: .5em;
+    margin-right: .5em;
 }
