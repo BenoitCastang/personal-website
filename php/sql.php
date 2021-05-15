@@ -1,46 +1,30 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php session_start() ?>
+<?php $title = 'SQL'?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
+<?php ob_start()?>
 
-<head>
-    <link rel="stylesheet" href="/css/log_in.css">
-    <title>SQL</title>
-</head>
+    <main class="form">
 
-<body>
-
-<section class="form">
-
-    <h1>Add game</h1>
-    <form action="/php/sql_add.php" method="post">
-        <div class="form">
-            <input type="text" name="nom" placeholder="Nom">
-            <input type="text" name="console" placeholder="Console">
-            <input type="text" name="prix" placeholder="Prix">
+        <h1>Add game</h1>
+        <form action="/php/router.php?action=add_game" method="post">
+            <input type="text" name="nom" placeholder="Nom" required autofocus>
+            <input type="text" name="console" placeholder="Console" required>
+            <input type="text" name="prix" placeholder="Prix" required>
             <input type="submit" value="Send">
-        </div>
-    </form>
+        </form>
 
-    <h1>Modify game</h1>
-    <form action="/php/sql_update.php" method="post">
-        <div class="form">
-            <input type="text" name="nom" placeholder="Nom">
-            <input type="text" name="nouveau_nom" placeholder="Nouveau nom">
+        <h1>Modify game</h1>
+        <form action="/php/router.php?action=modify_game" method="post">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="nouveau_nom" placeholder="Nouveau nom" required>
             <input type="submit" value="Send">
-        </div>
-    </form>
+        </form>
+    
+        <h1>Explore</h1>
+        <a href="/php/router.php?action=games" id="explore_database_link"><input type="submit" value="Explore database" id="explore_database"></a>
 
-    <form action="sql_explore_database.php" id="explore">
-        <div class="form">
-            <input type="submit" value="Explore database">
-        </div>
-    </form>
+    </main>
 
-</section>
+<?php $content = ob_get_clean()?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php') ?>
-
-</body>
-
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

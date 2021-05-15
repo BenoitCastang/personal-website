@@ -1,10 +1,10 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php session_start() ?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
-    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/public/css//grid.css">
     <title>CSS Grid</title>
 </head>
 

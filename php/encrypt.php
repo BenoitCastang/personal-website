@@ -1,8 +1,8 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php session_start() ?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <head>
-    <link rel="stylesheet" href="/css/log.css">
+    <link rel="stylesheet" href="/public/css//log.css">
     <title>Encrypt</title>
 </head>
 

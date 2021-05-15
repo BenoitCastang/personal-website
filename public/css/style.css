@@ -1,0 +1,361 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid #fff; */
+}
+body {
+    font-family: 'Vollkorn';
+    background-image: url(/public/assets/img/library.jpg);
+    background-attachment: fixed;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+}
+header div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+footer nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+a {
+    text-decoration: none;
+}
+a, a:visited {
+    color: #fff;
+}
+a:hover {
+    border-bottom: 2px solid #fff;
+}
+#welcome {
+    margin: 0;
+}
+@media screen and (max-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: auto auto auto;
+    }
+    main {
+        padding: 0 1em;
+        order: 1;
+    }
+    footer nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+    footer a {
+        padding: 0 1em 0 1em;
+    }
+    header {
+        padding: 0 1em;
+    }
+    footer, header {
+        background-color: #000c;
+    }
+    footer a:nth-child(even) {
+        background-color: #5555;
+    }
+    a:hover {
+        border-bottom: none;
+    }
+    .responsive_hidden {
+        display: none;
+    }
+}
+
+/* -----------------------------------------------
+Portfolio
+----------------------------------------------- */
+
+.portfolio {
+    letter-spacing: 0.01em;
+    text-align: justify;
+    line-height: 1.7em;
+    text-indent: 2em;
+    padding: 1em 20em 1em;
+}
+@media screen and (max-width: 1024px) {
+    .portfolio {
+        padding: 0 1em;
+        order: 1;
+    }
+}
+
+/* -----------------------------------------------
+Blog
+----------------------------------------------- */
+
+.news {
+    width: 40%;
+    margin: auto;
+}
+@media screen and (max-width: 1024px) {
+    .news {
+        width: 90%;
+    }
+}
+.news p {
+    margin-top: 0;
+    border: 1px solid #fff;
+    padding: .3em;
+    text-align: justify;
+    color: #fff;
+}
+.news h1, h3 {
+    text-align:center;
+}
+.news h2 {
+    font-size: 1.2em;
+    font-weight: 100;
+}
+.news h3 {
+    background-color: #fff;
+    color: #000;
+    font-size: 0.9em;
+    margin-bottom: 0;
+}
+.news p > a {
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: none;
+    text-align: right;
+}
+.comments {
+    line-height: 1.2em;
+}
+.comment_date {
+    font-size: 0.8em;
+}
+.date {
+    font-style: italic;
+}
+.comments p {
+    border: none;
+}
+.comment_link {
+    margin-top: .5em;
+}
+
+/* -----------------------------------------------
+Chat
+----------------------------------------------- */
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.chat #pseudo {
+    margin-top: 1em;
+}
+.chat #send {
+    margin-bottom: 1em;
+}
+textarea {
+    margin-top: 1em;
+}
+.chat section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    margin: auto;
+}
+@media screen and (max-width: 1024px) {
+    .chat section {
+        width: 70%;
+    }
+}
+.pseudo {
+    margin-top: 1em;
+    border-top: 1px solid #fff;
+    padding-top: 1em;
+    font-weight: bold;  
+    font-size: 0.9em;
+}
+.datetime_message {
+    font-size: 0.7em;
+    background-color: #5555;
+}
+.pseudo, .datetime_message {
+    font-style: italic;
+    color: #ddd;
+}
+.content_message {
+    /* margin-top: 1em; */
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    font-size: 1.1em;
+}
+.chat p {
+     margin: 0;
+}
+/* -----------------------------------------------
+Sun rise
+----------------------------------------------- */
+
+#sun_rise_animation {
+    display: flex;
+    justify-content: center;
+}
+@keyframes sky-animation {
+    0% {
+      background:linear-gradient(#88889c, #0d0d79);
+    }
+    30% {
+      background: linear-gradient(orange, 70%, red);
+    }
+    40% {
+      background:linear-gradient(blue, 20%, skyblue);
+    }
+    70% {
+      background-color: skyblue;
+    }
+    100% {
+      background-color: skyblue;
+    }
+  }
+#sky {
+    width: 700px;
+    height: 500px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: sky-animation;
+    animation-duration: 15s;
+    transition-timing-function: linear;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+@keyframes sea-animation {
+    100% {
+        background: royalblue;
+      }
+    } 
+#sea {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    top: 50%;
+    background: linear-gradient(rgb(10, 5, 105), 20%, rgb(1, 2, 20));
+    animation-name: sea-animation;
+    animation-direction: 15s;
+
+}
+@keyframes sun-animation {
+    100% {
+        transform: translateY(-370px);
+    }
+}  
+#sun {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: radial-gradient(orange 30%, rgb(206, 193, 7));
+    box-shadow: 10px, 10px;
+    position: relative;
+    top: 80%;
+    animation-name: sun-animation;
+    animation-duration: 15s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+/* -----------------------------------------------
+Breakout game
+----------------------------------------------- */
+
+canvas {
+    background: #000;
+    display: block;
+    margin: 20px auto;
+}
+
+/* -----------------------------------------------
+SQL, log in, sign up forms
+----------------------------------------------- */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+form, #explore_database_link {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+#explore_database_link:hover {
+    border-bottom: none;
+}
+.form_section {
+    width: 100%;
+}
+.form_section > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+input[type=submit] {
+    background-color: rgb(195, 199, 163);
+    margin-top: 1em;
+}
+#explore_database {
+    margin-top: 0;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+input {
+    text-align: center;
+    margin-top: .3em;
+}
+@media screen and (max-width: 1024px) {
+    form, #explore_database_link {
+        width: 70%;
+    }
+}
+
+/* -----------------------------------------------
+Profile page
+----------------------------------------------- */
+
+.profile_page {
+    text-align: center;
+}
+
+/* -----------------------------------------------
+SQL table
+----------------------------------------------- */
+
+.sql {
+    margin: auto;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    min-width: 30%;
+    margin-bottom: 50px;
+}
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #2229;
+}
+#delete_button {
+    margin-left: 5px;
+    margin-right: 5px;
+}

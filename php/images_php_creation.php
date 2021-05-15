@@ -14,8 +14,8 @@
     // display image
     // imagepng($geometry);
     // create file
-    // imagepng($geometry, $_SERVER['DOCUMENT_ROOT'].'/assets/img/blank_image.png'); 
-    $mira = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/assets/img/mira.png');
+    // imagepng($geometry, $_SERVER['DOCUMENT_ROOT'].'/public/assets/img/blank_image.png'); 
+    $mira = imagecreatefrompng($_SERVER['DOCUMENT_ROOT'].'/public/assets/img/mira.png');
     $red = imagecolorallocate($mira, 150, 0, 0);
     imagestring($mira, 5, 100, 10, 'Son nom est Mira !', $red);
     imagepng($mira);

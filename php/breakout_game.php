@@ -1,21 +1,13 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php session_start() ?>
+<?php $title = 'Breakout game'?>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
-
-<head>
-    <link rel="stylesheet" href="/css/breakout_game.css">
-    <title>Breakout game</title>
-</head>
-
-<body>
+<?php ob_start()?>
 
     <canvas id="myCanvas" width="730" height="480"></canvas>
 
-    <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php') ?>
+    <script src="/public/js/breakout_game.js"></script>
 
-    <script src="/js/breakout_game.js"></script>
 
-</body>
+<?php $content = ob_get_clean()?>
 
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

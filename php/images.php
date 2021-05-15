@@ -1,14 +1,14 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
+<?php session_start() ?>
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
 
 <head>
-    <link rel="stylesheet" href="/css/images.css">
+    <link rel="stylesheet" href="/public/css//images.css">
     <title>Garbage test</title>
 </head>
 
 <body>
 
-    <!-- <img src="/assets/img/serf.gif" alt="" width="400px" height="500px"> -->
+    <!-- <img src="/public/assets/img/serf.gif" alt="" width="400px" height="500px"> -->
     <!-- <iframe src="/index.html" frameborder="1" width="80 0px" height="600px"></iframe> -->
 
     <!-- <div class="box" id="one"></div>
@@ -24,22 +24,98 @@
     
     <!-- <button>Button</button> -->
 
-    <figure>
+    <!-- <figure>
         <div class="images">
-            <img src="/assets/img/selene_mini.png" alt="selene mini image" class="zoom">
-            <img src="/assets/img/mira_mini.png" alt="mira mini image" class="zoom">
-            <img src="/assets/img/valyu_mini.png" alt="valyu mini image" class="zoom">
-            <img src="/assets/img/koza_mini.png" alt="koza mini image" class="zoom">
+            <img src="/public/assets/img/selene_mini.png" alt="selene mini image" class="zoom">
+            <img src="/public/assets/img/mira_mini.png" alt="mira mini image" class="zoom">
+            <img src="/public/assets/img/valyu_mini.png" alt="valyu mini image" class="zoom">
+            <img src="/public/assets/img/koza_mini.png" alt="koza mini image" class="zoom">
         </div>
         <figcaption style="text-align: center">Horion manga characters</figcaption>
-    </figure>
+    </figure> -->
+    
+<!-- 
+    <table>
+        <caption>Youtubers developpers</caption>
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Ville</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Age</th>
+                <th>Ville</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>Benjamin</td>
+                <td>Code</td>
+                <td>30 ans</td>
+                <td rowspan="2">Malaga</td>
+            </tr>
+            <tr>
+                <td>Aristide</td>
+                <td>Benoist</td>
+                <td>35 ans</td>
+            </tr>
+            <tr>
+                <td colspan="2">Benoit Castang</td>
+                <td>24 ans</td>
+                <td>Toulouse</td>
+            </tr>
+        </tbody>
+    </table> -->
 
-    <p class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ad nesciunt. Adipisci magni nihil unde eius quod eaque quam dolore a quis praesentium alias veniam commodi, iure obcaecati voluptate totam. <p id="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab doloribus cupiditate labore aperiam quod accusamus distinctio dignissimos impedit soluta, sunt minima veniam nemo quidem excepturi eligendi vel eaque saepe voluptatibus!</p>
-    Debitis nemo impedit soluta aut suscipit natus alias in nobis veniam et repellat illum accusantium, eos architecto cumque minus nulla. Repellat autem deserunt facere amet, soluta ipsa doloremque reprehenderit libero?</p>
+    <!-- <section class="form">
+        
+        <h1>Log in</h1>
+        <form action="/php/log.php" method="post">
+            <div class="form">
+                <input type="text" name="member_pseudo" id="member_pseudo" placeholder="Pseudo" size="20" maxlength="255">
+            </div>
+            <div class="form">
+                <input type="number" min="5" max="1000" step="5">
+                <input type="color">
+                <input type="time">
+                <input type="week">
+                <input type="month">
+                <input type="datetime">
+                <input type="datetime-local">
+                <input type="submit" value="Send">
+            </div>
+            <label for="country">Country ?</label>
+            <select name="country" id="country">
+                <optgroup label="Eurasie">
+                    <option value="japan">japan</option>
+                    <option value="Italy">Italy</option>
+                    <option value="France">France</option>
+                </optgroup>
+                <optgroup label="America">
+                    <option value="Brazil">Brazil</option>
+                    <option value="United States">United States</option>
+                    <option value="Canada">Canada</option>
+                </optgroup>
+            </select>
+        </form>
 
-    <footer>
+    </section> -->
+
+    <!-- <audio src="/public/assets//audio/soul_friends.mp3" controls autoplay loop width>You can't read this file.</audio> -->
+    <!-- <video src="/public/assets/video/larque_roland_engueulade.mp4" controls width="500" height="500">You can't read this file.</video> -->
+
+    <!-- <div id="box_shadow"></div> -->
+    <!-- <div style=box-shadow:0+0+0+3in#b5e0ba,0+0+0+5in#5d3a3a> -->
+
+    <!-- <footer>
         <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer>
+    </footer> -->
 
 </body>
 

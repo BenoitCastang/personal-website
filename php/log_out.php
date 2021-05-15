@@ -1,23 +1,18 @@
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/session_start.php');?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php session_start() ?>
+<?php $title = 'Log out'?>
 
-<head>
-    <link rel="stylesheet" href="/css/log.css">
-    <title>Log out</title>
-</head>
+<?php ob_start()?>
 
-<body>
+    <main class="profile_page">
 
-    You have been logged out.
-    <?php 
-        $_SESSION['connected'] = false;
-        $_SESSION['pseudo'] = null;
-    ?>
+        <p>You have been logged out.</p>
+        <?php 
+            $_SESSION['connected'] = false;
+            $_SESSION['pseudo'] = null;
+            ?>
 
+    </main>
 
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
+<?php $content = ob_get_clean()?>
 
-
-</body>
-
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>
