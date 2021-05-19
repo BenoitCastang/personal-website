@@ -1,8 +1,6 @@
-<?php session_start() ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
-
 <head>
-    <link rel="stylesheet" href="/public/css//images.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn">
+    <link rel="stylesheet" href="/public/css/images.css">
     <title>Garbage test</title>
 </head>
 
@@ -26,14 +24,14 @@
 
     <!-- <figure>
         <div class="images">
-            <img src="/public/assets/img/selene_mini.png" alt="selene mini image" class="zoom">
-            <img src="/public/assets/img/mira_mini.png" alt="mira mini image" class="zoom">
-            <img src="/public/assets/img/valyu_mini.png" alt="valyu mini image" class="zoom">
-            <img src="/public/assets/img/koza_mini.png" alt="koza mini image" class="zoom">
+            <img src="/public/assets/img/selene.png" alt="selene mini image" class="zoom">
+            <img src="/public/assets/img/mira.png" alt="mira mini image" class="zoom">
+            <img src="/public/assets/img/valyu.png" alt="valyu mini image" class="zoom">
+            <img src="/public/assets/img/koza.png" alt="koza mini image" class="zoom">
         </div>
         <figcaption style="text-align: center">Horion manga characters</figcaption>
     </figure> -->
-    
+
 <!-- 
     <table>
         <caption>Youtubers developpers</caption>
@@ -113,9 +111,28 @@
     <!-- <div id="box_shadow"></div> -->
     <!-- <div style=box-shadow:0+0+0+3in#b5e0ba,0+0+0+5in#5d3a3a> -->
 
-    <!-- <footer>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer> -->
+    <!-- <nav>
+        <div>link1</div>
+        <div>link2</div>
+        <div>link3</div>
+        <div>link4</div>
+        <div>link5</div>
+        <div><a href="#target">link6</a>
+            <div id="888target">link1</div>
+            <div id="target">link2</div>
+            <div id="target">link3</div>
+            <div id="target">link4</div>
+        </div>
+    </nav> -->
+
+    <!-- <div class="bg_img">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div> -->
+
+    <div class="border-radius"></div>
 
 </body>
 

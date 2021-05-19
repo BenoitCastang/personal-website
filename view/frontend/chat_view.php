@@ -6,8 +6,8 @@
     <main class="chat">
 
         <form action="/php/router.php?action=chat_message" method="post" class="chat_form">
-            <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo'] ?>" required>
-            <textarea name="content_message" id="content_message" cols="30" rows="5" placeholder="Message" autofocus required></textarea>
+            <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo'] ?>" maxlength="30" required>
+            <textarea name="content_message" id="content_message" cols="30" rows="5" placeholder="Message" maxlength="255" autofocus required></textarea>
             <input type="submit" value="Send" id="send">
         </form>
 
@@ -22,12 +22,12 @@
                             <?php
                             if ($key == 'pseudo') {
                                 ?>
-                                <p class="pseudo"><?= $value ?></p>
+                                <p class="pseudo"><?= $value ?>
                                 <?php
                             }
                             if ($key == 'datetime_message') {
                                 ?>
-                                <p class="datetime_message"><?= $value ?></p>
+                                <span class="datetime_message"><?= $value ?></p></span>
                                 <?php
                             }
                             if ($key == 'content_message') {

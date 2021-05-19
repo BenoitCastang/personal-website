@@ -34,15 +34,19 @@ function selectComments() {
     return $comments;
 }
 /**
- * Seletc all comments of the post
- * @param {Number} $post_id
- * @return {Array} $comments
+ * Insert comment in database
+ * @return {Array} $comment
  */
-function addComment() {
+function insertComment() {
     include($_SERVER['DOCUMENT_ROOT'].'/php/includes/pdo/pdo.php');
-    $comments = $db->prepare('INSERT INTO blog_comments(post_id, author, comment, comment_date) VALUES(?, ?, ?, NOW())');
-    $affectedLines = $comments->execute(array($postId, $author, $comment));
-    return $affectedLines;
+    $comment = $db->prepare('INSERT INTO blog_comments (comment_post_id, comment_author, comment_content, comment_date) VALUES(:comment_post_id, :comment_author, :comment_content, NOW())');
+    $comment->execute(array(
+        'comment_post_id' => htmlspecialchars($_GET['post_id']),
+        'comment_author' => htmlspecialchars($_POST['comment_author']),
+        'comment_content' => htmlspecialchars($_POST['comment_content'])
+    ));
+    $comment->closeCursor();
+    return $comment;
 }
 /**
  * Seletc all games of the database
@@ -73,6 +77,7 @@ function insertChatMessage() {
         'content_message' => htmlspecialchars($_POST['content_message'])
     ));
     $chatMessage->closeCursor();
+    return $chatMessage;
 }
 /**
  * Select user pseudo
@@ -113,6 +118,7 @@ function insertGame() {
         'prix' => htmlspecialchars($_POST['prix']),
     ));
     $game->closeCursor();
+    return $game;
 }
 /**
  * Update one of the games of the database
@@ -126,6 +132,7 @@ function updateGame() {
         'nouveau_nom' => htmlspecialchars($_POST['nouveau_nom'])
     ));
     $game->closeCursor();
+    return $game;
 }
 /**
  * Delete one of the games of the database
@@ -136,4 +143,5 @@ function deleteGame() {
     $game = $db->prepare('DELETE FROM jeux_video WHERE id = :id');
     $game->execute(array('id' => htmlspecialchars($_GET['id'])));
     $game->closeCursor();
+    return $game;
 }

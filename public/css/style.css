@@ -91,40 +91,74 @@ Portfolio
 Blog
 ----------------------------------------------- */
 
-.news {
+.blog {
     width: 40%;
     margin: auto;
 }
 @media screen and (max-width: 1024px) {
-    .news {
+    .blog {
         width: 90%;
     }
 }
-.news p {
+.blog p {
     margin-top: 0;
     border: 1px solid #fff;
     padding: .3em;
     text-align: justify;
     color: #fff;
 }
-.news h1, h3 {
+.blog h1, h3 {
     text-align:center;
 }
-.news h2 {
+.blog h2 {
     font-size: 1.2em;
     font-weight: 100;
 }
-.news h3 {
+.blog h3 {
     background-color: #fff;
     color: #000;
     font-size: 0.9em;
     margin-bottom: 0;
 }
-.news p > a {
+.blog p > a {
     text-decoration: none;
     display: inline-block;
     border-bottom: none;
     text-align: right;
+}
+.add_comment {
+    opacity: 0;
+    transition-duration: 2s;
+}
+.comment_content {
+    background: #ddd2;
+}
+.add_comment form {
+    width: 100%;
+}
+.blog a:hover {
+    border: none;
+}
+.blog :target {
+    opacity: 1;
+}
+.add_comment form > * {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.add_comment form > input {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #000;
+    font-weight: bold;
+}
+.add_comment textarea::placeholder {
+    color: #fff;
+}
+.add_comment input[name=comment_author]::placeholder {
+    color: #000;
+    font-weight: bold;
 }
 .comments {
     line-height: 1.2em;
@@ -152,6 +186,20 @@ Chat
     align-items: center;
     text-align: justify;
 }
+.chat form {
+    width: 30%;
+}
+.chat input {
+    background: #fff;
+    font-weight: bold;
+}
+.chat textarea {
+    background-color: transparent;
+    color: #fff;
+}
+.chat textarea::placeholder {
+    color: #fff;
+}
 .chat #pseudo {
     margin-top: 1em;
 }
@@ -173,10 +221,10 @@ textarea {
         padding: 0;
     }
     .chat form {
-        width: 100%;
+        width: 60%;
     }
     .chat section{
-        width: 100%;
+        width: 60%;
     }
     .chat p {
         width: 100%;
@@ -184,27 +232,16 @@ textarea {
 }
 .pseudo {
     margin-top: 1em;
-    border-top: 1px solid #fff;
     padding-top: 1em;
-    font-weight: bold;  
-    font-size: 0.9em;
 }
 .datetime_message {
-    font-size: 0.7em;
-    background-color: #5555;
-}
-.pseudo, .datetime_message {
-    font-style: italic;
-    color: #ddd;
+    font-size: 0.8em;
 }
 .content_message {
-    /* margin-top: 1em; */
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-    font-size: 1.1em;
+    background: #ddd2;
 }
 .chat p {
-     margin: 0;
+    margin: 0;
 }
 /* -----------------------------------------------
 Sun rise
@@ -292,11 +329,24 @@ canvas {
 SQL, log in, sign up forms
 ----------------------------------------------- */
 
-.form {
+.sql_form {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+}
+.sql_form input[type=text] {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-top: 0.5em;
+}
+.sql_form input[type=text]::placeholder {
+    color: #fffd;
+}
+.sql_form input[type=submit] {
+    font-weight: bold;
+    margin-top: 1em;
 }
 form, #explore_database_link {
     display: flex;
@@ -312,10 +362,6 @@ form, #explore_database_link {
 .form_section > * {
     margin-left: auto;
     margin-right: auto;
-}
-input[type=submit] {
-    background-color: rgb(195, 199, 163);
-    margin-top: 1em;
 }
 #explore_database {
     margin-top: 0;

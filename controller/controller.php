@@ -8,7 +8,12 @@ require($_SERVER['DOCUMENT_ROOT'].'/model/model.php');
  */
 function getPosts() {
     $posts = selectPosts();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/blog_view.php');
+    if (!$posts) {
+        throw new Exception('Error while trying to get blog posts');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/blog_view.php');
+    }
 }
 /**
  * Get a url given blog post and his comments and display them
@@ -18,7 +23,25 @@ function getPosts() {
 function getPost() {
     $post = selectPost();
     $comments = selectComments();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/blog_comments_view.php');
+    if (!$post || !$comments) {
+        throw new Exception('Error while trying to get the post and the comments');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/blog_comments_view.php');
+    }
+}
+/**
+ * Add comment in database and reload page
+ * @return {Array} $comment
+ */
+function addComment() {
+    $comment = insertComment();
+    if (!$comment) {
+        throw new Exception('Error while trying to add your comment.');
+    }
+    else {
+        header('Location: router.php?action=post&post_id=' . $_GET['post_id']);
+    }
 }
 /**
  * Get the list of the games and display them in a table
@@ -26,7 +49,12 @@ function getPost() {
  */
 function getGames() {
     $games = selectGames();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sql_table_view.php');
+    if (!$games) {
+        throw new Exception('Error while trying to get games.');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sql_table_view.php');
+    }
 }
 /**
  * Get messages of the chat and display them
@@ -34,7 +62,12 @@ function getGames() {
  */
 function getChatMessages() {
     $chatMessages = selectChatMessages();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/chat_view.php');
+    if (!$chatMessages) {
+        throw new Exception('Error while trying to get messages.');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/chat_view.php');
+    }
 }
 /**
  * Write message in the chat
@@ -42,8 +75,12 @@ function getChatMessages() {
  */
 function writeChatMessage() {
     $chatMessage = insertChatMessage();
-    $chatMessages = selectChatMessages();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/chat_view.php');
+    if (!$chatMessage) {
+        throw new Exception('Error while trying to add you message.');
+    }
+    else {
+        header('Location: router.php?action=chat');
+    }
 }
 /**
  * Log in user
@@ -51,7 +88,12 @@ function writeChatMessage() {
  */
 function logIn() {
     $user = selectUser();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/log_in_view.php');
+    if (!$user) {
+        throw new Exception('Error while trying to log you in.');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/log_in_view.php');
+    }
 }
 /**
  * Sign up member
@@ -59,7 +101,12 @@ function logIn() {
  */
 function signUp() {
     $member = insertIntoMembers();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sign_up_view.php');
+    if (!$member) {
+        throw new Exception('Error while trying to sign you up.');
+    }
+    else {
+        require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sign_up_view.php');
+    }
 }
 /**
  * Add game to the database
@@ -67,8 +114,12 @@ function signUp() {
  */
 function addGame() {
     $game = insertGame();
-    $games = selectGames();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sql_table_view.php');
+    if (!$game) {
+        throw new Exception('Error while trying to add game.');
+    }
+    else {
+        header('Location: router.php?action=games');
+    }
 }
 /**
  * Modify one of the games of the database
@@ -76,8 +127,12 @@ function addGame() {
  */
 function modifyGame() {
     $game = updateGame();
-    $games = selectGames();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sql_table_view.php');
+    if (!$game) {
+        throw new Exception('Error while trying to modify game');
+    }
+    else {
+        header('Location: router.php?action=games');
+    }
 }
 /**
  * Remove one of the games of the database
@@ -85,6 +140,10 @@ function modifyGame() {
  */
 function removeGame() {
     $game = deleteGame();
-    $games = selectGames();
-    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/sql_table_view.php');
+    if (!$game) {
+        throw new Exception('Error while trying to delete game.');
+    }
+    else {
+        header('Location: router.php?action=games');
+    }
 }

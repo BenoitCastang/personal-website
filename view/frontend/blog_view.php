@@ -3,7 +3,7 @@
 
 <?php ob_start() ?>
 
-<main class="news">
+<main class="blog">
 
         <h1>My blog</h1>
         
@@ -19,7 +19,7 @@
                 </h3>
                 <p>
                     <?= htmlspecialchars($data['post_content']) . '<br>'?>
-                    <a href="/php/router.php?action=post&<?='post_id='.$data['post_id'] ?>" class="log comment_link">Comments</a>
+                    <a href="/php/router.php?action=post&post_id=<?= $data['post_id'] ?>" class="log comment_link">Comments</a>
                 </p>
                 <?php
             }

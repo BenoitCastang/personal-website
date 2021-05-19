@@ -3,7 +3,7 @@
 
 <?php ob_start()?>
 
-    <main class="form">
+    <main class="sql_form">
 
         <h1>Add game</h1>
         <form action="/php/router.php?action=add_game" method="post">

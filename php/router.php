@@ -1,7 +1,7 @@
 <?php
+require($_SERVER['DOCUMENT_ROOT'].'/controller/controller.php');
 
-    require($_SERVER['DOCUMENT_ROOT'].'/controller/controller.php');
-
+try {
     if ($_GET['action']) {
         if ($_GET['action'] == 'listPosts') {
             getPosts();
@@ -33,9 +33,16 @@
         else if ($_GET['action'] == 'remove_game') {
             removeGame();
         }
+        else if ($_GET['action'] == 'add_comment') {
+            addComment();
+        }
     }
     else {
-        getPosts();
+        // header('Location: index.html');
     }
+}
 
-?>
+catch(Exception $e) {
+    $errorMessage = $e->getMessage();
+    require($_SERVER['DOCUMENT_ROOT'].'/php/error_view.php');
+}
