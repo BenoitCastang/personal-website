@@ -3,9 +3,9 @@
 
 <?php ob_start()?>
 
-    <main class="form">
+    <main class="sign_up_form">
 
-        <section class="form_section">
+        <section class="sign_up_form_section">
             
             <h1>Sign up</h1>
             <form action="/php/router.php?action=sign_up" method="post">

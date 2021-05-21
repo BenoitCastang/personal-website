@@ -3,9 +3,9 @@
 
 <?php ob_start()?>
 
-    <main class="form">
+    <main class="log_in_form">
 
-        <section class="form_section">
+        <section class="log_in_form_section">
         
             <h1>Log in</h1>
             <form action="/php/router.php?action=log_in" method="post">

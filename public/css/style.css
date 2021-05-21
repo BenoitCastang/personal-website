@@ -220,11 +220,8 @@ textarea {
     .chat {
         padding: 0;
     }
-    .chat form {
-        width: 60%;
-    }
-    .chat section{
-        width: 60%;
+    .chat form, .chat section {
+        width: 80%;
     }
     .chat p {
         width: 100%;
@@ -242,6 +239,7 @@ textarea {
 }
 .chat p {
     margin: 0;
+    word-wrap: break-word;
 }
 /* -----------------------------------------------
 Sun rise
@@ -335,16 +333,16 @@ SQL, log in, sign up forms
     align-items: center;
     width: 100%;
 }
-.sql_form input[type=text] {
+.sql_form input:nth-last-child(n+2), .log_in_form input:nth-last-child(n+2), .sign_up_form input:nth-last-child(n+2) {
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
     margin-top: 0.5em;
 }
-.sql_form input[type=text]::placeholder {
+.sql_form input:nth-last-child(n+2)::placeholder, .log_in_form input:nth-last-child(n+2)::placeholder, .sign_up_form input:nth-last-child(n+2)::placeholder {
     color: #fffd;
 }
-.sql_form input[type=submit] {
+.sql_form input:last-of-type, .log_in_form input:last-of-type, .sign_up_form input:last-of-type {
     font-weight: bold;
     margin-top: 1em;
 }
@@ -356,10 +354,10 @@ form, #explore_database_link {
 #explore_database_link:hover {
     border-bottom: none;
 }
-.form_section {
+.log_in_form_section, .sign_up_form_section {
     width: 100%;
 }
-.form_section > * {
+.log_in_form_section > *, .sign_up_form_section > * {
     margin-left: auto;
     margin-right: auto;
 }

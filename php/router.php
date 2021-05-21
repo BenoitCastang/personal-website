@@ -1,5 +1,10 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'].'/controller/controller.php');
+
+require_once($_SERVER['DOCUMENT_ROOT'].'/controller/BlogController.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/controller/BlogCommentController.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/controller/GameController.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/controller/ConnexionController.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/controller/ChatController.php');
 
 try {
     if ($_GET['action']) {
@@ -44,5 +49,5 @@ try {
 
 catch(Exception $e) {
     $errorMessage = $e->getMessage();
-    require($_SERVER['DOCUMENT_ROOT'].'/php/error_view.php');
+    require($_SERVER['DOCUMENT_ROOT'].'/view/frontend/error_view.php');
 }
