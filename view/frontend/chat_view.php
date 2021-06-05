@@ -3,15 +3,15 @@
 
 <?php ob_start()?>
 
-    <main class="chat">
+    <main class="chat flex-column margin-auto align-items-center text-align-justify">
 
-        <form action="/php/router.php?action=chat_message" method="post" class="chat_form">
-            <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo'] ?>" maxlength="30" required>
-            <textarea name="content_message" id="content_message" cols="30" rows="5" placeholder="Message" maxlength="255" autofocus required></textarea>
-            <input type="submit" value="Send" id="send">
+        <form action="/php/router.php?action=chat_message" method="post" class="flex-column width-60pc">
+            <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo'] ?>" maxlength="30" required class="background-color-white font-weight-bold">
+            <textarea name="content_message" id="content_message" cols="30" rows="5" placeholder="Message" maxlength="255" required class="background-color-transparent color-white"></textarea>
+            <input type="submit" value="Send" id="send" class="background-color-white font-weight-bold">
         </form>
 
-        <section>
+        <section class="width-60pc flex-column align-items-flex-start">
 
                 <?php
 
@@ -22,7 +22,7 @@
                             <?php
                             if ($key == 'pseudo') {
                                 ?>
-                                <p class="pseudo"><?= $value ?>
+                                <p class="pseudo margin-0"><?= $value ?>
                                 <?php
                             }
                             if ($key == 'datetime_message') {
@@ -41,7 +41,7 @@
                                 $value = preg_replace('/\[color=(red|blue|green)\](.+)\[\/color\]/isU', '<span style="color: $1">$2</span>', $value);
                                 $value = preg_replace('/https?:\/\/([a-z0-9._\/-]+)/i', '<a href="$0">$1</a>', $value);
                                 ?>
-                                <p class="content_message"><?= $value ?></p>
+                                <p class="content_message margin-0"><?= $value ?></p>
                             <?php
                             }
                             ?>

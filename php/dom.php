@@ -1,18 +1,16 @@
 <?php session_start() ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php $title = 'DOM'?>
 
-<head>
-    <title>DOM</title>
-</head>
+<?php ob_start()?>
 
-<body>
+<main class="dom">
 
-    <footer>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer>
-    
-    <script src="/js/algo.js"></script>
+<div class="margin-auto">le loup a faim</div>
 
-</body>
+<script src="/public/js/algo.js"></script>
 
-</html>
+</main>
+
+<?php $content = ob_get_clean()?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

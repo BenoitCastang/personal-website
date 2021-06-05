@@ -3,7 +3,7 @@
 
 <?php ob_start() ?>
 
-<main class="blog">
+<main class="blog width-30pc margin-auto">
 
         <h1>My blog</h1>
         
@@ -13,7 +13,7 @@
         
             while ($data = $posts->fetch()) {
                 ?>
-                <h3>
+                <h3 class="background-color-white">
                     <?= htmlspecialchars($data['post_title']) . ' ' ?>
                     <em><?= $data['post_date']?></em>
                 </h3>

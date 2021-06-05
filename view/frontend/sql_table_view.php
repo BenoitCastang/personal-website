@@ -3,11 +3,11 @@
 
 <?php ob_start()?>
 
-    <main class="sql">
+    <main class="sql margin-auto overflow-x-auto">
 
         <h1>Jeux vidéo</h1>
 
-        <table>
+        <table class="sql-table">
 
             <tr>
                 <th>ID</th>
@@ -25,7 +25,7 @@
                     <td>
                         <?= $data['id'] ?>
                         <a href="/php/router.php?action=remove_game&id=<?=$data['id']?>">
-                            <img id="delete_icon" src="/public/assets/img/trash_icon.png" alt="delete icon" width="15" height="15" title="delete icon">
+                            <img src="/public/assets/img/trash_icon.png" alt="delete icon" width="15" height="15" title="delete icon">
                         </a>
                     </td>
                     <td><?= $data['nom'] ?></td>

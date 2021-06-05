@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /* border: 1px solid #fff; */
 }
 body {
     font-family: 'Vollkorn';
@@ -10,15 +9,18 @@ body {
     display: grid;
     grid-template-columns: 15% 70% 15%;
 }
-header div {
+.flex-column {
     display: flex;
     flex-direction: column;
+}
+.align-items-flex-start {
     align-items: flex-start;
 }
-footer nav {
-    display: flex;
-    flex-direction: column;
+.align-items-flex-end {
     align-items: flex-end;
+}
+.align-items-center {
+    align-items: center;
 }
 a {
     text-decoration: none;
@@ -26,11 +28,60 @@ a {
 a, a:visited {
     color: #fff;
 }
-a:hover {
+.hover-border:hover {
     border-bottom: 2px solid #fff;
 }
-#welcome {
+.margin-0 {
     margin: 0;
+}
+.margin-auto {
+    margin: auto;
+}
+.padding-05em {
+    padding: 0.5em;
+}
+.text-align-center {
+    text-align: center;
+}
+.text-align-justify {
+    text-align: justify;
+}
+.text-align-left {
+    text-align: left;
+}
+.text-align-right {
+    text-align: right;
+}
+.width-60pc {
+    width: 60%;
+}
+.width-30pc {
+    width: 30%;
+}
+.background-color-white {
+    background-color: #fff;
+}
+.background-color-transparent {
+    background-color: transparent;
+}
+.color-white {
+    color: #fff;
+}
+.color-black {
+    color: #000;
+}
+.font-weight-bold {
+    font-weight: bold;
+}
+.border-white {
+    border: 1px solid #fff;
+}
+.placeholder-white::placeholder {
+    color: #fff;
+}
+::selection {
+    background-color: #fff;
+    color: #000;
 }
 @media screen and (max-width: 1024px) {
     body {
@@ -70,18 +121,17 @@ a:hover {
 }
 
 /* -----------------------------------------------
-Portfolio
+Main page
 ----------------------------------------------- */
 
-.portfolio {
+.main-page {
     letter-spacing: 0.01em;
-    text-align: justify;
     line-height: 1.7em;
     text-indent: 2em;
     padding: 1em 20em 1em;
 }
 @media screen and (max-width: 1024px) {
-    .portfolio {
+    .main-page {
         padding: 0 1em;
         order: 1;
     }
@@ -91,10 +141,6 @@ Portfolio
 Blog
 ----------------------------------------------- */
 
-.blog {
-    width: 40%;
-    margin: auto;
-}
 @media screen and (max-width: 1024px) {
     .blog {
         width: 90%;
@@ -115,7 +161,6 @@ Blog
     font-weight: 100;
 }
 .blog h3 {
-    background-color: #fff;
     color: #000;
     font-size: 0.9em;
     margin-bottom: 0;
@@ -126,35 +171,14 @@ Blog
     border-bottom: none;
     text-align: right;
 }
-.add_comment {
-    opacity: 0;
-    transition-duration: 2s;
-}
 .comment_content {
     background: #ddd2;
-}
-.add_comment form {
-    width: 100%;
 }
 .blog a:hover {
     border: none;
 }
 .blog :target {
     opacity: 1;
-}
-.add_comment form > * {
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-}
-.add_comment form > input {
-    background-color: #fff;
-    border: 1px solid #fff;
-    color: #000;
-    font-weight: bold;
-}
-.add_comment textarea::placeholder {
-    color: #fff;
 }
 .add_comment input[name=comment_author]::placeholder {
     color: #000;
@@ -180,23 +204,6 @@ Blog
 Chat
 ----------------------------------------------- */
 
-.chat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: justify;
-}
-.chat form {
-    width: 30%;
-}
-.chat input {
-    background: #fff;
-    font-weight: bold;
-}
-.chat textarea {
-    background-color: transparent;
-    color: #fff;
-}
 .chat textarea::placeholder {
     color: #fff;
 }
@@ -208,13 +215,6 @@ Chat
 }
 textarea {
     margin-top: 1em;
-}
-.chat section {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 30%;
-    margin: auto;
 }
 @media screen and (max-width: 1024px) {
     .chat {
@@ -238,9 +238,73 @@ textarea {
     background: #ddd2;
 }
 .chat p {
-    margin: 0;
     word-wrap: break-word;
 }
+
+/* -----------------------------------------------
+Breakout game
+----------------------------------------------- */
+
+canvas {
+    background: #000;
+    display: block;
+    margin: 20px auto;
+}
+
+/* -----------------------------------------------
+SQL, log in, sign up forms
+----------------------------------------------- */
+
+.sql_form input:last-of-type, .log_in_form input:last-of-type, .sign_up_form input:last-of-type {
+    font-weight: bold;
+    margin-top: 1em;
+}
+input {
+    text-align: center;
+    margin-top: .3em;
+}
+#explore_database_link:hover {
+    border-bottom: none;
+}
+.log_in_form_section, .sign_up_form_section {
+    width: 100%;
+}
+.log_in_form_section > *, .sign_up_form_section > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+#explore_database {
+    margin-top: 0;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+@media screen and (max-width: 1024px) {
+    form, #explore_database_link {
+        width: 70%;
+    }
+}
+
+/* -----------------------------------------------
+SQL table
+----------------------------------------------- */
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+.sql-table {
+    border-collapse: collapse;
+}
+.sql-table td, .sql-table th {
+    text-align: left;
+    padding: .5em;
+}
+.sql-table tr:nth-child(even) {
+    background-color: #2229;
+}
+
 /* -----------------------------------------------
 Sun rise
 ----------------------------------------------- */
@@ -314,104 +378,12 @@ Sun rise
 }
 
 /* -----------------------------------------------
-Breakout game
+Dom
 ----------------------------------------------- */
 
-canvas {
-    background: #000;
-    display: block;
-    margin: 20px auto;
-}
-
-/* -----------------------------------------------
-SQL, log in, sign up forms
------------------------------------------------ */
-
-.sql_form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-.sql_form input:nth-last-child(n+2), .log_in_form input:nth-last-child(n+2), .sign_up_form input:nth-last-child(n+2) {
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    margin-top: 0.5em;
-}
-.sql_form input:nth-last-child(n+2)::placeholder, .log_in_form input:nth-last-child(n+2)::placeholder, .sign_up_form input:nth-last-child(n+2)::placeholder {
-    color: #fffd;
-}
-.sql_form input:last-of-type, .log_in_form input:last-of-type, .sign_up_form input:last-of-type {
-    font-weight: bold;
-    margin-top: 1em;
-}
-form, #explore_database_link {
-    display: flex;
-    flex-direction: column;
-    width: 20%;
-}
-#explore_database_link:hover {
-    border-bottom: none;
-}
-.log_in_form_section, .sign_up_form_section {
-    width: 100%;
-}
-.log_in_form_section > *, .sign_up_form_section > * {
-    margin-left: auto;
-    margin-right: auto;
-}
-#explore_database {
-    margin-top: 0;
-}
-h1 {
+.dom div {
+    width: 50%;
     text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.5em;
-}
-input {
-    text-align: center;
-    margin-top: .3em;
-}
-@media screen and (max-width: 1024px) {
-    form, #explore_database_link {
-        width: 70%;
-    }
-}
-
-/* -----------------------------------------------
-Profile page
------------------------------------------------ */
-
-.profile_page {
-    text-align: center;
-}
-
-/* -----------------------------------------------
-SQL table
------------------------------------------------ */
-
-.sql {
-    margin: auto;
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-}
-td, th {
-    text-align: left;
-    padding: 0.5em;
-}
-@media screen and (max-width: 1024px) {
-    td, th {
-        font-size: .8em;
-        padding: .5%;
-    }
-}
-tr:nth-child(even) {
-    background-color: #2229;
-}
-#delete_button {
-    margin-left: .5em;
-    margin-right: .5em;
+    font-size: 3em;
+    font-family: serif;
 }
