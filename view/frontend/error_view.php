@@ -1,18 +1,14 @@
 <?php session_start() ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php $title = 'Error page'?>
 
-<head>
-    <title>Error page</title>
-</head>
+<?php ob_start()?>
 
-<body>
+<main class="main main--connection">
 
-    <p style="text-align:center"><?= $errorMessage ?></p>
+    <?= $errorMessage ?>
 
-    <footer>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer>
+</main>
 
-</body>
+<?php $content = ob_get_clean()?>
 
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

@@ -185,3 +185,4 @@ main.removeChild(div);
 let ol = document.createElement('ol')
 main.replaceChild(ol, div2);
 ol.innerHTML = '<li>blop</li><li>blabla</li>';
+

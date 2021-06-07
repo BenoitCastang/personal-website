@@ -3,16 +3,17 @@
 
 <?php ob_start()?>
 
-    <main class="sign_up_form">
+    <main class="main main--connection">
 
-        <section class="sign_up_form_section">
+        <section>
             
-            <h1>Sign up</h1>
-            <form action="/php/router.php?action=sign_up" method="post" class="flex-column width-30pc">
-                <input type="text" name="member_pseudo" id="member_pseudo" placeholder="Pseudo" required class="background-color-transparent border-white color-white placeholder-white">
-                <input type="email" name="member_email" id="member_email" placeholder="E-mail" required class="background-color-transparent border-white color-white placeholder-white">
-                <input type="password" name="member_password" id="member_password" placeholder="Password" required class="background-color-transparent border-white color-white placeholder-white">
-                <input type="password" name="member_confirm_password" id="member_confirm_password" placeholder="Confirm password" required class="background-color-transparent border-white color-white placeholder-white">
+            <h1 class="main__h1">Sign up</h1>
+
+            <form action="/php/router.php?action=sign_up" method="post" class="main__form">
+                <input type="text" name="member_pseudo" placeholder="Pseudo" required>
+                <input type="email" name="member_email" placeholder="E-mail" required>
+                <input type="password" name="member_password" placeholder="Password" required>
+                <input type="password" name="member_confirm_password" placeholder="Confirm password" required>
                 <input type="submit" value="Send">
             </form>
 

@@ -3,24 +3,22 @@
 
 <?php ob_start() ?>
 
-<main class="blog width-30pc margin-auto">
+<main class="main">
 
-        <h1>My blog</h1>
+        <h1 class="main__h1">My blog</h1>
         
-        <h2>Last posts</h2>
+        <h2 class="main__h2">Last posts</h2>
 
         <?php
         
             while ($data = $posts->fetch()) {
                 ?>
-                <h3 class="background-color-white">
-                    <?= htmlspecialchars($data['post_title']) . ' ' ?>
-                    <em><?= $data['post_date']?></em>
-                </h3>
-                <p>
-                    <?= htmlspecialchars($data['post_content']) . '<br>'?>
-                    <a href="/php/router.php?action=post&post_id=<?= $data['post_id'] ?>" class="log comment_link">Comments</a>
-                </p>
+                <article class="main__blog-post">
+                    <a href="/php/router.php?action=post&post_id=<?= $data['post_id'] ?>">
+                        <h3><?= $data['post_title'] . ' ' ?><span><?= $data['post_date']?></span></h3>
+                        <p><?= $data['post_content'] . '<br>'?></p>
+                    </a>
+                </article>
                 <?php
             }
             $posts->closeCursor();

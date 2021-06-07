@@ -3,12 +3,18 @@
 
 <?php ob_start() ?>
 
-    <div id="sun_rise_animation">
-        <div id="sky">
-            <div id="sun"></div>
-            <div id="sea"></div>
+    <main>
+
+        <h1 class="main__h1">Sun rise</h1>
+
+        <div id="sun_rise_animation">
+            <div id="sky">
+                <div id="sun"></div>
+                <div id="sea"></div>
+            </div>
         </div>
-    </div>
+
+    </main>
 
 <?php $content = ob_get_clean() ?>
 

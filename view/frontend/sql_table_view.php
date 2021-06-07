@@ -3,11 +3,11 @@
 
 <?php ob_start()?>
 
-    <main class="sql margin-auto overflow-x-auto">
+    <main class="main main--overflow-x-auto">
 
-        <h1>Jeux vidéo</h1>
+        <h1 class="main__h1">SQL table</h1>
 
-        <table class="sql-table">
+        <table class="main__sql-table">
 
             <tr>
                 <th>ID</th>

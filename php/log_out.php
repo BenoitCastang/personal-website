@@ -3,13 +3,13 @@
 
 <?php ob_start()?>
 
-    <main class="profile_page">
+    <main class="main main--connection">
 
-        <p>You have been logged out.</p>
         <?php 
             $_SESSION['connected'] = false;
             $_SESSION['pseudo'] = null;
-            ?>
+            echo 'You have been logged out.';
+        ?>
 
     </main>
 
