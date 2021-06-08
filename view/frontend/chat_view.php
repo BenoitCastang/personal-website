@@ -20,21 +20,21 @@
                 while ($data = $chatMessages->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                     <div class="main__messages__message">
-                        <?
+                        <?php
                         foreach ($data as $key => $value) {
                             if ($key == 'pseudo') {
-                                echo '<p>'.$value.' ';
+                                ?><p><?= $value.' ' ?><?php
                             }
                             if ($key == 'datetime_message') {
-                                echo '<span>'.$value.'</span></p>';
+                                ?><span><?= $value ?></span></p><?php
                             }
                             if ($key == 'content_message') {
-                                echo '<p>'.$value.'</p>';
+                                ?><p><?= $value ?></p><?php
                             }
                         }
                         ?>
                     </div>
-                    <?
+                    <?php
                 }
                 
             ?>

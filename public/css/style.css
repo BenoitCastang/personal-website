@@ -93,6 +93,9 @@ Components
     margin-top: 0;
     padding: 0.25em;
 }
+.main__messages {
+    word-wrap: break-word;
+}
 .main__messages__message p:first-of-type {
     margin-top: 1em;
     margin-bottom: 0;
@@ -142,6 +145,10 @@ Reponsive
         align-items: flex-start;
         flex-wrap: wrap;
     }
+    .header, .footer {
+        padding-left: .25em;
+        padding-right: 0.25em;
+    }
     footer, header {
         background-color: #000c;
     }
@@ -152,7 +159,14 @@ Reponsive
         display: none;
     }
 }
-
+@media screen and (max-width: 900px) {
+    .main {
+        width: 90%;
+    }
+    .main--overflow-x-auto {
+        width: 100%;
+    }
+}
 /* -----------------------------------------------
 Properties
 ----------------------------------------------- */
