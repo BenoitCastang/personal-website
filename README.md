@@ -1,3 +1,3 @@
 # PortFolio
 
-This is a training website, meant to make me improve my skills.
+This is my portfolio, where I show what I can do in programming.
