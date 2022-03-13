@@ -4,7 +4,7 @@
 <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/welcome.php');?>
 
 <head>
-    <link rel="stylesheet" href="/public/css//grid.css">
+    <link rel="stylesheet" href="/public/css/grid.css">
     <title>CSS Grid</title>
 </head>
 

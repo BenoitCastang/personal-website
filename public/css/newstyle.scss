@@ -1,3 +1,19 @@
+$white: #fff;
+$black: #000;
+$red: #f00;
+$green: #0f0;
+$blue: #00f;
+$yellow: #ff0;
+$sky-blue: #0ff;
+$pink: #f0f;
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+@mixin border ($color: $white, $line_width: 1px, $line_style: solid) {
+    border: $line-width $line_style $color;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -5,15 +21,19 @@ body {
     font-family: 'Vollkorn';
     background-image: url(/public/assets/img/library.jpg);
     background-attachment: fixed;
-    color: #fff;
+    color: $white;
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 15% 70% 15%;
+}
+body::-webkit-scrollbar {
+    display: none;
 }
 a {
     text-decoration: none;
-}
-a, a:visited {
-    color: #fff;
+    color: $white;
+    &:visited {
+        color: $white;
+    }
 }
 
 /* -----------------------------------------------
@@ -23,103 +43,123 @@ Components
 .main {
     width: 60%;
     margin: auto;
-}
-.main--connection {
-    margin: 0 auto;
-    text-align: center;
-}
-.main--overflow-x-auto {
-    overflow-x: auto;
-    width: 100%;
-}
-.main__h1 {
-    text-align: center;
-    font-size: 1.5em;
-}
-.main__h2 {
-    font-size: 1.2em;
-    font-weight: lighter;
-}
-.main__text {
-    letter-spacing: 0.01em;
-    line-height: 1.7em;
-    text-indent: 2em;
-    text-align: justify;
-}
-.main__form--with-pseudo input:first-of-type, .main__form--with-pseudo input:first-of-type::placeholder, .main__form input[type=submit], .main__form input[type=submit]::placeholder {
-    color: #000;
-    font-weight: bold;
-    background-color: #fff;
-}
-.main__form > *, .main__form > *::placeholder {
-    text-align: center;
-    background-color: transparent; 
-    color: #fff;
-    border: 1px solid #fff;
-    margin-bottom: .5em;
-}
-.main__form textarea::placeholder, .main__form input::placeholder {
-    border: none;
-}
-.main__canvas {
-    background: #000;
-    display: block;
-}
-.main__sql-table {
-    border-collapse: collapse;
-    margin: auto;
-}
-.main__sql-table td, .main__sql-table th {
-    text-align: left;
-    padding: .5em;
-}
-.main__sql-table tr:nth-child(even) {
-    background-color: #2229;
-}
-.main__blog-post h3 {
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    font-size: 1em;
-    margin-bottom: 0;
-}
-.main__blog-post span {
-    font-style: italic;
-}
-.main__blog-post p {
-    text-align: justify;
-    border: 2px solid #fff;
-    color: #fff;
-    margin-top: 0;
-    padding: 0.25em;
-}
-.main__messages {
-    word-wrap: break-word;
-}
-.main__messages__message p:first-of-type {
-    margin-top: 1em;
-    margin-bottom: 0;
-}
-.main__messages__message span {
-    font-size: .8em;
-}
-.main__messages__message p:last-of-type {
-    background-color: #ddd2;
-    text-align: justify;
-    margin-top: 0.25em;
-}
-.header, .footer, .main__form {
-    display: flex;
-    flex-direction: column;
-}
-.header a:hover, .footer a:hover {
-    border-bottom: 2px solid #fff;
+    &--connection {
+        margin: 0 auto;
+        text-align: center;
+    }
+    &--overflow-x-auto {
+        overflow-x: auto;
+        width: 100%;
+    }
+    &--kaamelott {
+        width: 100%;
+        background-image: url("/public/assets/img/kaamelottbackground.png");
+        background-size: contain;
+        text-align: justify;   
+        line-height: 30px;
+    }
+    &__kaamelott-text {
+        width: 40%;
+        margin: auto;
+        font-size: 25px;
+        background-color: #0008;
+    }
+    &__h1 {
+        text-align: center;
+        font-size: 1.5em;
+    }
+    &__h2 {
+        font-size: 1.2em;
+        font-weight: lighter;
+    }
+    &__text > p {
+        line-height: 1.7em;
+        text-align: justify;
+        text-indent: 1em;
+    }
+    &__form {
+        @include flex-column;
+        *, *::placeholder {
+            text-align: center;
+            background-color: transparent; 
+            color: $white;
+            @include border($white);
+            margin-bottom: .5em;
+        }
+        textarea::placeholder, input::placeholder {
+            border: none;
+        }
+    }
+    &__form--with-pseudo input:first-of-type, &__form--with-pseudo input:first-of-type::placeholder, &__form input[type=submit], &__form input[type=submit]::placeholder {
+        color: $black;
+        font-weight: bold;
+        background-color: $white;
+    }
+    &__canvas {
+        background: $black;
+        display: block;
+    }
+    &__sql-table {
+        border-collapse: collapse;
+        margin: auto;
+    }
+    &__sql-table td, &__sql-table th {
+        text-align: left;
+        padding: .5em;
+    }
+    &__sql-table tr:nth-child(even) {
+        background-color: #2229;
+    }
+    &__blog-post {
+        h3 {
+            background-color: $white;
+            color: $black;
+            text-align: center;
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        span {
+            font-style: italic;
+        }
+        p {
+            text-align: justify;
+            @include border($white, 2px);
+            color: $white;
+            margin-top: 0;
+        padding: 0.25em;
+        }
+    }
+    &__messages {
+        word-wrap: break-word;
+        &__messages__message {
+            p:first-of-type {
+                margin-top: 1em;
+                margin-bottom: 0;
+            }
+            span {
+                font-size: .8em;
+            }
+            p:last-of-type {
+                background-color: #ddd2;
+                text-align: justify;
+                margin-top: 0.25em;
+            }
+        }
+    }
 }
 .header {
-    align-items: flex-start;    
+    @include flex-column;
+    align-items: flex-start;
+    a:hover {
+        outline: 1px $white solid;
+    }
 }
 .footer {
+    @include flex-column;
     align-items: flex-end;
+    a:hover {
+        outline: 1px $white solid;
+    }
 }
     
 /* -----------------------------------------------
@@ -139,31 +179,113 @@ Reponsive
     main {
         order: 1;
     }
-    .footer {
+    .footer, .header {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
-    }
-    .header, .footer {
+        background-color: $black;
         padding-left: .25em;
         padding-right: 0.25em;
     }
-    footer, header {
-        background-color: #000c;
-    }
-    footer a:nth-child(even) {
-        background-color: #3335;
-    }
-    .footer__responsive-hidden {
-        display: none;
+    footer {
+        a:nth-child(even) {
+            background-color: #3335;
+        }
     }
 }
 @media screen and (max-width: 900px) {
     .main {
         width: 90%;
+        .main--overflow-x-auto {
+            width: 100%;
+        }
     }
-    .main--overflow-x-auto {
-        width: 100%;
+    footer {
+        .footer__responsive-hidden {
+            display: none;
+        }
     }
+}
+
+/* -----------------------------------------------
+Sun rise
+----------------------------------------------- */
+
+#sun_rise_animation {
+    display: flex;
+    justify-content: center;
+}
+@keyframes sky-animation {
+    0% {
+      background:linear-gradient(#88889c, #0d0d79);
+    }
+    30% {
+      background: linear-gradient(orange, 70%, red);
+    }
+    40% {
+      background:linear-gradient(blue, 20%, skyblue);
+    }
+    70% {
+      background-color: skyblue;
+    }
+    100% {
+      background-color: skyblue;
+    }
+  }
+#sky {
+    width: 700px;
+    height: 500px;
+    margin-bottom: 50px;
+    @include flex-column;
+    align-items: center;
+    animation-name: sky-animation;
+    animation-duration: 15s;
+    transition-timing-function: linear;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+@keyframes sea-animation {
+    100% {
+        background: royalblue;
+      }
+    } 
+#sea {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    top: 50%;
+    background: linear-gradient(rgb(10, 5, 105), 20%, rgb(1, 2, 20));
+    animation-name: sea-animation;
+    animation-direction: 15s;
+
+}
+@keyframes sun-animation {
+    100% {
+        transform: translateY(-370px);
+    }
+}  
+#sun {
+    height: 125px;
+    width: 125px;
+    border-radius: 50%;
+    background: radial-gradient(orange 30%, rgb(206, 193, 7));
+    box-shadow: 0 0 20px orange;
+    position: relative;
+    top: 78%;
+    animation-name: sun-animation;
+    animation-duration: 15s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+/* -----------------------------------------------
+TOAST
+----------------------------------------------- */
+
+
+.toast {
+    color: #0f0;
+    background-color: #f00;
+    
 }

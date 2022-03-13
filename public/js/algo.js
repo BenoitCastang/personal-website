@@ -172,17 +172,16 @@
 
 // // toFrenchString(prompt('Type a number between 0 and 999'));
 
-let div = document.querySelector('main div');
-let div2 = document.createElement('div');
-let main = document.querySelector('main');
-div2.textContent = "très faim, tellement faim";
-main.appendChild(div2);
-let divAll = document.querySelectorAll('div');
-divAll[2].style.backgroundColor = '#f00';
-divAll[2].style.margin = 'auto';
-divAll[1].style.color = '#00f';
-main.removeChild(div);
-let ol = document.createElement('ol')
-main.replaceChild(ol, div2);
-ol.innerHTML = '<li>blop</li><li>blabla</li>';
-
+// let div = document.querySelector('main div');
+// let div2 = document.createElement('div');
+// let main = document.querySelector('main');
+// div2.textContent = "très faim, tellement faim";
+// main.appendChild(div2);
+// let divAll = document.querySelectorAll('div');
+// divAll[2].style.backgroundColor = '#f00';
+// divAll[2].style.margin = 'auto';
+// divAll[1].style.color = '#00f';
+// main.removeChild(div);
+// let ol = document.createElement('ol')
+// main.replaceChild(ol, div2);
+// ol.innerHTML = '<li>blop</li><li>blabla</li>';

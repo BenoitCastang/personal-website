@@ -7,7 +7,7 @@ body {
   background-attachment: fixed;
   color: #fff;
 }
-.box {
+/* .box {
   display: block;
   width: 1500px;
   height: 1500px;
@@ -25,12 +25,12 @@ body {
   background: blue;
 }
 #one { 
-  /* display: none; */
+  display: none;
   background-image: url(/public/assets/img/Mira.png), url(/public/assets/img/profile.jpg);
   background-repeat: no-repeat;
   background-position: bottom left top right;
-  /* background-size: contain; */
-  /* left: 300px; */
+  background-size: contain;
+  left: 300px;
 }
 #two {
   display: none;
@@ -39,11 +39,11 @@ body {
   display: none;
   justify-content: center;
 }
-/* body {
+body {
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+}
 .flex {
   display: flex;
   width: 500px;
@@ -57,9 +57,9 @@ body {
   margin: 10px;
   text-align: center;
 }
-/* .flex div:nth-child(2) {
+.flex div:nth-child(2) {
   margin-left: auto;
-} */
+}
 
 figure {
   margin: auto;
@@ -75,15 +75,15 @@ figure {
 .images div:hover {
   width: 70%;
 }
-/* .images img {
+.images img {
   align-self: center;
   justify-self: center;
   width: 70%;
   height: 80%;
   border: 1px solid #f00;
-} */
+}
 .zoom {
-  transition: transform .5s;
+  transition: transform 5s;
   width: auto;
   height: auto;
 }
@@ -98,9 +98,9 @@ button {
   position: absolute;
   left: 42vw;
   top: 25vh;
-  /* border-width: 20px;
+  border-width: 20px;
   border-color: #0b0;
-  border-style: inset; */
+  border-style: inset;
   box-shadow: 20px 20px 20px black inset;
 }
 button:active {
@@ -134,7 +134,7 @@ a, a:visited {
   text-decoration: none;
   display: block;
 }
-/* .grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(10, auto);
@@ -156,28 +156,28 @@ p, div, a {
 }
 .grid :target {
   background: #000;
-} */
-/* .grid :nth-child(3n+1) {
+}
+.grid :nth-child(3n+1) {
   background-color: #0f0;
-} */
-/* p:last-of-type {
+}
+p:last-of-type {
   background-color: none;
-} */
+}
 nav {
   display: flex;
   justify-content: center;
   text-align: center;
 }
 nav div {
-  /* background-color: hsl(0, 50%, 100%); */
+  background-color: hsl(0, 50%, 100%);
   line-height: 2em;
   padding: 0 2em;
   margin-top: 50px;
-  /* color: #000;
+  color: #000;
   text-shadow:  0px -1px 3px yellow,
   0px -4px 5px orange,
   0px -7px 7px red,
-  0px -11px 12px darkred;; */
+  0px -11px 12px darkred;;
   background-color: #e3e3e3;
   color: #d3d3d3;
   text-shadow: 1px 1px #fff, -1px -1px #444;
@@ -188,7 +188,7 @@ nav div div {
 }
 nav :target {
   display: block;
-}
+} */
 .bg_img {
   display: grid;
   grid-template-rows: repeat(2, 50%);
@@ -207,30 +207,50 @@ nav :target {
   background-size: contain, auto 100%;
   background-position: center;
   background-clip: padding-box;
-  transition-duration: 1s;
+  transition-duration: 3s;
 }
-.bg_img div:nth-of-type(-2n+3 ):hover {
+.bg_img div:nth-of-type(-2n+3):hover {
   background-position: right;
 }
-.bg_img div:nth-of-type(-2n+4):hover {
+/* .bg_img div:nth-of-type(-2n+4):hover {
   background-position: left;
-}
-.bg_img div:nth-of-type(-2n+3 ):active {
+} */
+.bg_img div:nth-of-type(-2n+3):active {
   background-position: left;
+  image-orientation: 90deg;
 }
-.bg_img div:nth-of-type(-2n+4):active {
+/* .bg_img div:nth-of-type(-2n+4):active {
   background-position: right;
-}
+  image-orientation: 90deg;
+} */
 .bg_img div:nth-of-type(1) {
-  background-image: url(/public/assets/img/mira.png), url(/vendor/images/sanfrancisco.jpg);
+  background-image: url(/public/assets/img/mira.png);
+  animation-name: mira;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes mira {
+  0% {
+    background-color: #f00;
+  }
+  100% {
+    background-color: #00f;
+  }
 }
 .bg_img div:nth-of-type(2) {
-  background-image: url(/public/assets/img/selene.png);
+  background-image: url(/public/assets/img/selene.png), url(/vendor/images/sanfrancisco.jpg);
 }
 .bg_img div:nth-of-type(3) {
-  background-image: url(/public/assets/img/valyu.png);
+  background-image: url(/public/assets/img/valyu.png), url(/vendor/images/sanfrancisco.jpg);
 }
 .bg_img div:nth-of-type(4) {
-  background-image: url(/public/assets/img/koza.png);
+  background-image: url(/vendor/images/sanfrancisco.jpg);
+  background-size: cover;
+  border: none;
+  border-radius: 1%;
+  transition-duration: 5s;
+  filter: contrast(0%)
 }
-/* .border-radius { */
+.bg_img div:nth-of-type(4):hover {
+    filter: contrast(100%)
+}

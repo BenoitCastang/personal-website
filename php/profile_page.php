@@ -3,7 +3,7 @@
 
 <?php ob_start()?>
 
-    <main class="text-align-center">
+    <main class="main main--connection">
 
         <?= 'This is ' . $_SESSION['pseudo'] . '\'s profile page.' ?>
 

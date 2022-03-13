@@ -155,9 +155,6 @@ Reponsive
     footer a:nth-child(even) {
         background-color: #3335;
     }
-    .footer__responsive-hidden {
-        display: none;
-    }
 }
 @media screen and (max-width: 900px) {
     .main {
@@ -165,6 +162,9 @@ Reponsive
     }
     .main--overflow-x-auto {
         width: 100%;
+    }
+    .footer__responsive-hidden {
+        display: none;
     }
 }
 

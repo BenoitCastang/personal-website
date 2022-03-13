@@ -1,6 +1,6 @@
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Vollkorn">
-    <link rel="stylesheet" href="/public/css/images.css">
+    <link rel="stylesheet" href="/public/css/dist/images.css">
     <title>Garbage test</title>
 </head>
 
@@ -128,15 +128,15 @@ l
         </div>
     </nav> -->
 
-    <!-- <div class="bg_img">
+    <div class="bg_img">
         <div></div>
         <div></div>
         <div></div>
         <div></div>
-    </div> -->
-
+    </div>
+    
     <div class="border-radius"></div>
-
+    
 </body>
 
-</html>
+</html> 

@@ -13,7 +13,7 @@ let dx = 6;
 let dy = 6;
 let ballRadius = 10;
 // paddle vars
-let paddleHeight = 12;
+let paddleHeight = 11;
 let paddleWidth = 100;
 let paddleX = (canvas.width-paddleWidth)/2;
 // command vars

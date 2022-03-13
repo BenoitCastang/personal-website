@@ -18,9 +18,9 @@ class Character {
         $this->setAttack($attack);
         $this->setLifePoints($lifePoints);
         $this->setPlace($place);
-        $this->_exp = $exp;
-        Character::countUp();
-        echo self::$_count . '<br>';
+        $this->setExp($exp);
+        // Character::countUp();
+        // echo self::$_count . '<br>';
     }
     // Getters
     public function strength(): int {
@@ -39,36 +39,32 @@ class Character {
         return $this->_exp;
     }
     // Setters
-    public function setStrength($strength): void {
-        if (!in_array($strength, [self::LOW_STRENGTH, self::AVG_STRENGTH, self::HIGH_STRENGTH])) {trigger_error('Value not accepted', E_USER_WARNING);return;}
+    public function setStrength(int $strength): void {
+        if (!in_array($strength, [self::LOW_STRENGTH, self::AVG_STRENGTH, self::HIGH_STRENGTH])) {trigger_error('Value not accepted', E_USER_WARNING);}
         else {$this->_strength = $strength;}
     }
     public function setAttack(int $attack): void {
-        if (!is_int($attack)) {trigger_error('Var attack must be an int', E_USER_WARNING);return;}
-        else if ($attack < 0 || $attack > 100) {trigger_error('Var attack must be between 0 and 100', E_USER_WARNING); return;}
+        if ($attack < 0 || $attack > 100) {trigger_error('Var attack must be between 0 and 100', E_USER_WARNING);}
         else {$this->_attack = $attack;}
     }
     public function setLifePoints(int $lifePoints): void {
-        if (!is_int($lifePoints)) {trigger_error('Var lifePoints must be an int', E_USER_WARNING);return;}
-        else if ($lifePoints < 0 || $lifePoints > 100) {trigger_error('Var lifePoints must be between 0 and 100', E_USER_WARNING); return;}
+        if ($lifePoints < 0 || $lifePoints > 100) {trigger_error('Var lifePoints must be between 0 and 100', E_USER_WARNING);}
         else {$this->_lifePoints = $lifePoints;}
     }
     public function setPlace(int $place): void {
-        if (!is_int($place)) {trigger_error('Var place must be an int', E_USER_WARNING);return;}
-        else if ($place < 0 || $place > 100) {trigger_error('Var place must be between 0 and 100', E_USER_WARNING); return;}
+        if ($place < 0 || $place > 100) {trigger_error('Var place must be between 0 and 100', E_USER_WARNING);}
         else {$this->_place = $place;}
     }
     public function setExp(int $exp): void {
-        if (!is_int($exp)) {trigger_error('Var exp must be an int', E_USER_WARNING);return;}
-        else if ($exp < 0 || $exp > 100) {trigger_error('Var exp must be between 0 and 100', E_USER_WARNING); return;}
+        if ($exp < 0 || $exp > 100) {trigger_error('Var exp must be between 0 and 100', E_USER_WARNING);}
         else {$this->_exp = $exp;}
     }
     // Methods
     public function expUp(): void {
-        $this->setExp($this->_exp += 1);
+        $this->setExp($this->_exp += 5);
     }
     public function hit(Character $opponent): void  {
-        $opponent->setLifePoints($this->_attack);
+        $opponent->setLifePoints($opponent->lifePoints()-$this->_attack);
     }
     // Static methods
     public static function talk(): void {
@@ -78,3 +74,41 @@ class Character {
         self::$_count++;
     }
 }
+
+?>
+
+<?php session_start() ?>
+<?php $title = 'Character'?>
+
+<?php ob_start()?>
+
+<main class="main">
+    
+    <?php
+        $char1 = new Character(50, 75, 100, 20, 40);
+        // $char2 = new Character(25, 50, 100, 80, 10);
+        // echo 'char1 lifepoints = ', $char1->lifepoints(), '<br/>';
+        // echo 'char2 lifepoints = ', $char2->lifepoints(), '<br/>';
+        // $char1->hit($char2);
+        // echo 'char1 hits char2 !', '<br/>';
+        // echo 'char2 lifepoints is now ', $char2->lifepoints(), '<br/>';
+        // $char1->expUp();
+        // echo 'char1 gains 5 exp !', '<br/>';
+        // echo 'char1 exp is now ', $char1->exp(), '<br/>';
+        $char1->setLifePoints(40);
+        echo '<p style="color: red">char1 lifepoints is now ', $char1->lifePoints(), '<br/></p>';
+        echo '<p style="color: green">char1 exp is now ', $char1->exp(), '<br/></p>';
+        // function sum($args) {
+        //     $sum = 0;
+        //     foreach ($args as $key => $value) {
+        //         echo $key, ' = ', $value;
+        //     }
+        // }
+        // sum(5, 4, 3);
+    ?>
+
+</main>
+
+<?php $content = ob_get_clean()?>
+
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

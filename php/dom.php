@@ -7,7 +7,7 @@
 
 <div class="margin-auto">le loup a faim</div>
 
-<script src="/public/js/algo.js"></script>
+<script src="/public/js/dist/algo.js"></script>
 
 </main>
 
