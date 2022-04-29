@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/model/Manager.php');
 
 class GameManager extends Manager {
     /**
-     * Seletc all games of the database
+     * Select all games of the database
      * @return {Array} $games
      */
     public function selectGames() {

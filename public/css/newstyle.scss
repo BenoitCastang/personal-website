@@ -16,6 +16,7 @@ $pink: #f0f;
 
 *, *::before, *::after {
     box-sizing: border-box;
+    // scroll-behavior: smooth;
 }
 body {
     font-family: 'Vollkorn';
@@ -151,14 +152,14 @@ Components
     @include flex-column;
     align-items: flex-start;
     a:hover {
-        outline: 1px $white solid;
+        font-size: 1.1em;
     }
 }
 .footer {
     @include flex-column;
     align-items: flex-end;
     a:hover {
-        outline: 1px $white solid;
+        font-size: 1.1em;
     }
 }
     

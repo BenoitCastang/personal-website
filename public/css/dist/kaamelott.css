@@ -1,9 +1,0 @@
-body {
-  width: 400px;
-  margin: auto;
-  color: #fff;
-  background-image: url("/public/assets/img/kaamelottbackground.png");
-  background-size: contain;
-  text-align: justify;
-  line-height: 30px;
-}

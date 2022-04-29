@@ -1,9 +1,0 @@
-<div blabla1=""></div>
-<div blabla2=""></div>
-<div blabla3=""></div>
-<div blabla4=""></div>
-<div blabla5=""></div>
-<div blabla6=""></div>
-<div blabla7=""></div>
-<div blabla8=""></div>
-<div blabla9=""></div>

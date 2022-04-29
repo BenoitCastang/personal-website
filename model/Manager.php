@@ -6,3 +6,4 @@ class Manager {
         return $db;
     }
 }
+// mysql from terminal : mysql -h localhost -u root -p test

@@ -5,11 +5,11 @@ require_once($_SERVER['DOCUMENT_ROOT'].'/model/Manager.php');
 class Fighter extends Manager {
     // Attributes
     private $_id;
-    private $_nickname;
-    private $_attack;
-    private $_lifePoints;
+    private $_name;
+    private $_atk;
+    private $_lfp;
     private $_lvl;
-    private $_experience;
+    private $_exp;
     // Constructor
     public function __construct(array $data)
     {
@@ -26,33 +26,28 @@ class Fighter extends Manager {
     }
     // Getters
     public function id(): int {return $this->_id;}
-    public function nickname(): string {return $this->_nickname;}
-    public function attack(): int {return $this->_attack;}
-    public function lifePoints(): int {return $this->_lifePoints;}
+    public function name(): string {return $this->_name;}
+    public function atk(): int {return $this->_atk;}
+    public function lfp(): int {return $this->_lfp;}
     public function lvl(): int {return $this->_lvl;}
-    public function experience(): int {return $this->_experience;}
+    public function exp(): int {return $this->_exp;}
     // Setters
     public function setId(int $id): void {
-        $id = (int) $id;
         if ($id > 0) {$this->_id = $id;}
     }
-    public function setNickname(string $nickname): void {
-        if (is_string($nickname) && strlen($nickname) <= 30) {$this->_nickname = $nickname;}
+    public function setname(string $name): void {
+        if (strlen($name) <= 30) {$this->_name = $name;}
     }
-    public function setAttack(int $attack): void {
-        $attack = (int) $attack;
-        if ($attack >= 1 && $attack <= 100) {$this->_attack = $attack;}
+    public function setatk(int $atk): void {
+        if ($atk >= 1 && $atk <= 100) {$this->_atk = $atk;}
     }
-    public function setLifePoints(int $lifePoints): void {
-        $lifePoints = (int) $lifePoints;
-        if ($lifePoints >= 1 && $lifePoints <= 100) {$this->_lifePoints = $lifePoints;}
+    public function setlfp(int $lfp): void {
+        if ($lfp >= 1 && $lfp <= 100) {$this->_lfp = $lfp;}
     }
     public function setLvl(int $lvl): void {
-        $lvl = (int) $lvl;
         if ($lvl >= 1 && $lvl <= 100) {$this->_lvl = $lvl;}
     }
-    public function setExperience(int $experience): void {
-        $experience = (int) $experience;
-        if ($experience >= 1 && $experience <= 100) {$this->_experience = $experience;}
+    public function setexp(int $exp): void {
+        if ($exp >= 1 && $exp <= 100) {$this->_exp = $exp;}
     }
 }

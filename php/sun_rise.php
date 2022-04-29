@@ -3,7 +3,7 @@
 
 <?php ob_start() ?>
 
-    <main>
+    <main class="main">
 
         <h1 class="main__h1">Sun rise</h1>
 

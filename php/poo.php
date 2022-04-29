@@ -1,17 +1,15 @@
 <?php session_start() ?>
 <?php $title = 'POO'?>
+<?php spl_autoload_register(function ($class_name) {include $_SERVER['DOCUMENT_ROOT'].'/php/'.$class_name.'.php';})?>
 
 <?php ob_start()?>
 
     <main class="text-align-center">
 
+        <h1 class="main__h1">PHP POO</h1>
+
         <?php
 
-            function loadClass($class) {
-                require($_SERVER['DOCUMENT_ROOT'].'/php/' . $class . '.php');
-            }
-            spl_autoload_register('loadClass');
-            require($_SERVER['DOCUMENT_ROOT'].'/php/Fighter.php');
             // $character = new Character(Character::LOW_STRENGTH, 20, 100, 10, 7);
             // $character2 = new Character(Character::HIGH_STRENGTH, 70, 100, 10, 16);
             // $character3 = new Character(Character::HIGH_STRENGTH, 70, 100, 10, 16);
@@ -42,7 +40,7 @@
 
             $db = new PDO('mysql:host=localhost;dbname=test', 'root', 'root');
             $manager = new FighterManager($db);
-
+            
             // $manager->add($fighter);
             // $manager->delete(5);
             // $fighter = $manager->get(1);

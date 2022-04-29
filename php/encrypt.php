@@ -1,12 +1,9 @@
 <?php session_start() ?>
-<?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/head.php');?>
+<?php $title = 'Encrypt'?>
 
-<head>
-    <link rel="stylesheet" href="/public/css//log.css">
-    <title>Encrypt</title>
-</head>
+<?php ob_start()?>
 
-<body>
+<main>
 
 <?php
 if (isset($_POST['login']) AND isset($_POST['pass']))
@@ -36,10 +33,8 @@ else // On n'a pas encore rempli le formulaire
 }
 ?>
 
-    <footer>
-        <?php include($_SERVER['DOCUMENT_ROOT'].'/php/includes/menu.php');?>
-    </footer>
+</main>
 
-</body>
+<?php $content = ob_get_clean()?>
 
-</html>
+<?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>

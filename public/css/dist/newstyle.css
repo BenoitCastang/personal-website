@@ -46,8 +46,9 @@ Components
   line-height: 30px;
 }
 .main__kaamelott-text {
-  width: 30%;
+  width: 40%;
   margin: auto;
+  font-size: 25px;
   background-color: #0008;
 }
 .main__h1 {
@@ -136,7 +137,7 @@ Components
   align-items: flex-start;
 }
 .header a:hover {
-  outline: 1px #fff solid;
+  font-size: 1.1em;
 }
 
 .footer {
@@ -145,7 +146,7 @@ Components
   align-items: flex-end;
 }
 .footer a:hover {
-  outline: 1px #fff solid;
+  font-size: 1.1em;
 }
 
 /* -----------------------------------------------

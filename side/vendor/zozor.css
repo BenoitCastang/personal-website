@@ -1,0 +1,239 @@
+@font-face
+{
+font-family: 'BallparkWeiner';
+src: url('polices/ballpark.eot');
+src: url('polices/ballpark.eot?#iefix') format('embeddedopentype'),
+url('polices/ballpark.svg#BallparkWeiner') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+@font-face
+{
+font-family: 'Dayrom';
+src: url('polices/dayrom.eot');
+src: url('polices/dayrom.eot?#iefix') format('embeddedopentype'),
+url('polices/dayrom.svg#Dayrom') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+body {
+    background-image: url(/vendor/images/fond_jaune.png);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #181818;
+}
+#bloc_page {
+    width: 900px;
+    margin: auto;
+}
+section h1, footer h1, nav a {
+    font-family: 'Dayrom', serif;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+#titre_principal {
+    margin-bottom: 0;
+}
+header {
+    background: url(/vendor/images/separateur.png) repeat-x bottom;
+}
+header h1 {
+    font-family: 'Aguafina Script', serif;
+    font-size: 2.5em;
+    font-weight: normal;
+}
+#logo, header h1 {
+    display: inline-block;
+    margin-bottom: 0;
+}
+header h2 {
+    display: inline-block;
+    width: 165.34px;
+    font-family: 'Dayrom', serif;
+    font-size: 1.1em;
+    margin-top: 0;
+    font-weight: normal;
+}
+nav {
+    display: inline-block;
+    width: 725.66px;
+    text-align: right;
+    margin: 0;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+}
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+nav a {
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+nav a:hover {
+    color: #760001;
+    border-bottom: 3px #760001 solid;
+}
+#banniere_image {
+    margin-top: 15px;
+    height: 200px;
+    border-radius: 5px;
+    background: url(/vendor/images/sanfrancisco.jpg) no-repeat;
+    position: relative;
+    box-shadow: 0 0 4px #000;
+    margin-bottom: 25px;
+}
+#banniere_description {
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 5px 5px;
+    height: 33px;
+    width: 99.5%;
+    padding-top: 15px;
+    padding-left: 4px;
+    background-color: #181818b0;
+    color: #fff;
+    font-size: 0.8em;
+}
+.bouton_rouge {
+    display: inline-block;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background-image: url(/vendor/images/fond_degraderouge.png);
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0 8px;
+    color: #fff;
+    text-decoration: none;
+}
+.bouton_rouge img {
+    border: 0;
+}
+article, aside {
+    display: inline-block;
+    vertical-align: top;
+    text-align: justify;
+}
+article {
+    width: 625px;
+    margin-right: 15px;
+}
+.ico_categorie {
+    margin-right: 8px;
+    vertical-align: middle;
+}   
+article p {
+    font-size: 0.8em;
+}
+aside {
+    position: relative;
+    width: 235px;
+    background-color: #706b64;
+    padding: 10px;
+    box-shadow: 0 2px 5px #1c1a19;
+    border-radius: 5px;
+    color: #fff;
+}
+aside h1 {
+    text-align: center;
+}
+aside p {
+    font-size: 0.8em;
+}
+#fleche_bulle {
+    position: absolute;
+    top: 100px;
+    left: -12px;
+}
+#photo_zozor {
+    text-align: center;
+}
+#photo_zozor img {
+    border: 1px solid #181818;
+}
+aside img {
+    margin-right: 5px;
+}
+footer {
+    background: url(/vendor/images/ico_top.png) no-repeat top center, url(/vendor/images/separateur.png) repeat-x top, url(/vendor/images/ombre.png) repeat-x top;
+    padding-top: 25px;
+}
+footer p, footer ul {
+    font-size: 0.8em;
+}
+footer h1 {
+    font-size: 1.1em;
+}
+#tweet, #mes_photos, #mes_amis {
+    display: inline-block;
+    vertical-align: top;
+}
+#tweet {
+    width: 28%;
+}
+#mes_photos {
+    width: 35%;
+}
+#mes_amis {
+    width: 31%;
+}
+#mes_photos img {
+    border: 1px solid #181818;
+    margin-right: 2px;
+}
+#mes_amis ul {
+    display: inline-block;
+    margin-top: 0;
+    width: 48%;
+    list-style-image: url(/vendor/images/ico_liensexterne.png);
+    padding-left: 2px;
+}
+#mes_amis a {
+    text-decoration: none;
+    color: #760001;
+}
+@media all and (max-width: 1024px) {
+    #bloc_page {
+        width: auto;
+    }
+    nav {
+        width: auto;
+        text-align-last: left;
+    }
+    nav li {
+        display: block;
+        padding-left: 4px;
+    }
+    nav a {
+        font-size: 2em;
+    }
+    nav a:hover {
+        border-bottom: 0;
+    }
+    #banniere_image {
+        display: none;
+    }
+    article, aside {
+        width: auto;
+        display: block;
+        margin-bottom: 15px;
+    }
+    #fleche_bulle {
+        display: none;
+    }
+    #photo_zozor img {
+        width: 110px;
+        float: right;
+        margin-left: 15px;
+    }
+    aside p:last-child {
+        text-align: center;
+    }
+}
