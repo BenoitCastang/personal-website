@@ -1,3 +1,3 @@
-# PortFolio
+# Personal website
 
-This is my portfolio, where I show what I can do in programming.
+This is the source code for my personal website: https://www.benoitcastang.fr/
