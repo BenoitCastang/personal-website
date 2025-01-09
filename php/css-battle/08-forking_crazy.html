@@ -1,0 +1,83 @@
+<div class="core"></div>
+<div class="handle"></div>
+<div class="container container1">
+    <div class="branch branch1"></div>
+  <div class="branch branch2"></div>
+  <div class="branch branch3"></div>
+  <div class="branch branch4"></div>
+</div>
+<div class="container container2">
+    <div class="branch branch1"></div>
+  <div class="branch branch2"></div>
+  <div class="branch branch3"></div>
+</div>
+
+<style>
+  body {
+    background-color: #6592cf;
+    margin: 0;
+  }
+  .core {
+    background-color: #060f55;
+    width: 140px;
+    height: 90px;
+    position: absolute;
+    top: 160px;
+    left: 130px;
+    border-radius: 0 0 50% 50% / 0 0 80% 80%;
+  }
+  .handle {
+    background-color: #060f55;
+    width: 20px;
+    height: 60px;
+    position: absolute;
+    top: 240px;
+    left: 190px;
+  }
+  .container {
+    width: 140px;
+    height: 55px;
+    position: absolute;
+    left: 130px;
+  }
+  .container1 {
+    background-color: #6592cf;
+    top: 50px;
+  }
+  .container1 .branch {
+    position: absolute;
+    background-color: #060f55;
+    width: 20px;
+    height: 55px;
+    border-radius: 80% 80% 0 0 / 25% 25% 0 0 ;
+  }
+  .container1 .branch2 {
+    left: 40px;
+  }
+  .container1 .branch3 {
+    left: 80px;
+  }
+  .container1 .branch4 {
+    left: 120px;
+  }
+  .container2 {
+    background-color: #060f55;
+    top: 105px;
+  }
+  .container2 .branch {
+    position: absolute;
+    background-color: #6592cf;
+    width: 20px;
+    height: 55px;
+    border-radius: 0 0 80% 80% / 0 0 25% 25% ;
+  }
+  .container2 .branch1 {
+    left: 20px;
+  }
+  .container2 .branch2 {
+    left: 60px;
+  }
+  .container2 .branch3 {
+    left: 100px;
+  }
+</style>

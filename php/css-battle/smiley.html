@@ -1,0 +1,88 @@
+<p class="stats"></p>
+<div class="smiley">
+  <div class="eye left-eye">
+    <div class="pupil"></div>
+  </div>
+  <div class="eye right-eye">
+    <div class="pupil"></div>
+  </div>
+  <div class="mouth"></div>
+</div>
+
+<style>
+  *>*>* {
+    position: absolute;
+  }
+  .stats {
+    margin: 0;
+  }
+  .smiley {
+    background-color: yellow;
+    width: 25%;
+    aspect-ratio: 1;
+    border: solid black .1rem;
+    border-radius: 50%;
+    top: 25%;
+    left: 37.5%;
+  }
+  .smiley>* {
+    background-color: black;
+  }
+  .eye {
+    border-radius: 50%;
+    width: 10%;
+    height: 30%;
+    top: 20%;
+  }
+  .left-eye {
+    left: 30%;
+  }
+  .right-eye {
+    left: 60%;
+  }
+  .pupil {
+    background-color: white;
+    width: 40%;
+    height: 20%;
+    border-radius: 50%;
+    top: 40%;
+    left: 30%;
+  }
+  .mouth {
+    width: 60%;
+    height: 20%;
+    left: 20%;
+    top: 65%;
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+</style>
+
+<script>
+  const stats = document.querySelector(".stats");
+  const pupils = document.querySelectorAll(".pupil");
+  console.log(pupils);
+  const eye = document.querySelector(".eye");
+  console.log(eye.offsetWidth);
+  console.log(eye.offsetHeight);
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    pupils.forEach(pupil => {
+      pupil.style.top = y/10;
+      pupil.style.left = x/60;
+    });
+  });
+  const smiley = document.querySelector(".smiley");
+  console.dir(smiley);
+  document.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
+    //stats.innerText = "x = " + x + " y = " + y;
+    pupils.forEach(pupil => {
+      pupil.style.top = y/10;
+      pupil.style.left = x/60;
+    });
+  });
+</script>

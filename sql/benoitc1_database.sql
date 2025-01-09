@@ -83,7 +83,7 @@ INSERT INTO `blog_comments` (`comment_id`, `comment_post_id`, `comment_author`, 
 (6, 2, 'Porcellino', 'Je sais pas, ça me semble pas si bien engagé...', '2021-05-18 23:08:39'),
 (7, 5, 'Benoît Castang', 'J\'avoue c\'est stylé', '2021-05-18 23:09:47'),
 (8, 5, 'Porcellina', 'Le loup a faim, très faim, tellement faim qu\'il pourrait manger n\'importe quoi.', '2021-05-19 02:30:49'),
-(9, 1, 'Benoît Castang', 'Mouais, c\'est un peu convenu, comme sujet !', '2021-05-21 20:37:23'),
+(9, 1, 'Benoît Castang', 'Mouais, c\'est un peu convenu, comme sujet !', '2021-05-21 20:37:23');
 
 -- --------------------------------------------------------
 
