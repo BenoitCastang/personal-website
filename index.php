@@ -9,7 +9,7 @@
 
         <div class="main__text">
             <p>Welcome to my portfolio !</p>
-            <p>This is not much, but it testifies I learnt building websites by myself. It is a plain LAMP stack: html, css/sass, php, mariadb and js from scratch, no framework. It is powered through a Linode debian cloud instance, and is for me a great lab !</p>
+            <p>This is not much, but it testifies I'm learning  building websites by myself. It is a plain LAMP stack: html, css/sass, php, mariadb and js from scratch, no framework. It is powered through a Linode debian cloud instance, and is for me a great lab !</p>
         </div>
 
     </main>
