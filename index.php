@@ -3,16 +3,18 @@
 
 <?php ob_start()?>
 
-    <main class="main">
+  <main class="main">
 
-        <h1 class="main__h1">Main page</h1>
+    <h1 class="main__h1">Main page</h1>
 
-        <div class="main__text">
-            <p>Welcome to my portfolio !</p>
-            <p>This is not much, but it testifies I'm learning building websites by myself. It is a plain LAMP stack: html, css/sass, php, mariadb and js from scratch, no framework. It is powered through a Linode debian cloud instance, and is for me a great lab !</p>
-        </div>
+    <div class="main__text">
+        <p>Welcome to my portfolio !</p>
+        <p>This is not much, but it testifies I'm learning building websites by myself. It is a plain LAMP stack: html, css/sass, php, mariadb and js from scratch, no framework. It is powered through a Linode debian cloud instance, and is for me a great lab !</p>
+    </div>
 
-    </main>
+  </main>
+
+  <script src="https://raw.githubusercontent.com/BenoitCastang/personal-website/main/side/public/js/binary_converter.js"></script>
 
 <?php $content = ob_get_clean()?>
 
