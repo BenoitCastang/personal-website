@@ -14,9 +14,8 @@
 
   </main>
 
+  <!-- <script>console.log('blop')</script> -->
+
 <?php $content = ob_get_clean()?>
 
 <?php require($_SERVER['DOCUMENT_ROOT'].'/php/includes/template.php')?>
-
-<script src="https://raw.githubusercontent.com/BenoitCastang/personal-website/main/side/public/js/binary_converter.js"></script>
-
